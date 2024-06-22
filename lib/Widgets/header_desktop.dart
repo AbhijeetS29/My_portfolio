@@ -5,11 +5,11 @@ import '../Decoration/style.dart';
 import '../constants/colors.dart';
 
 class HeaderDesktop extends StatelessWidget {
-  // const HeaderDesktop({
-  //   super.key,
-  //   required this.onNavMenuTap,
-  // });
-  // final Function(int) onNavMenuTap;
+  const HeaderDesktop({
+    super.key,
+    required this.onNavMenuTap,
+  });
+  final Function(int) onNavMenuTap;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class HeaderDesktop extends StatelessWidget {
               padding: const EdgeInsets.only(right: 20),
               child: TextButton(
                 onPressed: () {
-                  // onNavMenuTap(i);
+                  onNavMenuTap(i);
                 },
                 child: Text(
                   navTitles[i],

@@ -16,10 +16,12 @@ class HeaderMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50.0,
-      margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
+      margin: const EdgeInsets.fromLTRB(20, 5, 20, 5),
+      width: double.maxFinite,
       decoration: kHederDecoration,
       child: Row(
         children: [
+          SizedBox(width: 20,),
           SiteLogo(
             onTap: onLogoTap,
           ),
