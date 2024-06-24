@@ -49,7 +49,7 @@ class MainDesktop extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 25,
                     height: 1.5,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                     color: CustomColor.yellowPrimary,
                   ),
                 ),Text(

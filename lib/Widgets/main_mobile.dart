@@ -24,28 +24,31 @@ class MainMobile extends StatelessWidget {
           minHeight: 560.0,
         ),
         decoration: BoxDecoration(
-          color: Color(0xaffffff)
+          // color: Color(0x1affffff),
+          borderRadius: BorderRadius.circular(20)
         ),
 
 
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // avatar img
             ShaderMask(
               shaderCallback: (bounds) {
                 return LinearGradient(colors: [
-                  CustomColor.scaffoldBg.withOpacity(0.6),
-                  CustomColor.scaffoldBg.withOpacity(0.6),
+                  CustomColor.scaffoldBg.withOpacity(0.4),
+                  CustomColor.scaffoldBg.withOpacity(0.4),
                 ]).createShader(bounds);
               },
               blendMode: BlendMode.srcATop,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Image.asset(
-                  "assets/images/mainpic.png",
-                  width: screenWidth/2,
+                child: Center(
+                  child: Image.asset(
+                    "assets/images/mainpic.png",
+                    width: screenWidth/2,
+                  ),
                 ),
               ),
             ),

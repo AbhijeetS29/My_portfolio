@@ -10,5 +10,6 @@ class CustomColor {
   static const Color yellowPrimary = Color(0xffFFAF29);
   static const Color whitePrimary = Color(0xffEAEAEB);
   static const Color maincolor1 = Color(0xff2A2A39);
+  static const Color maincolor2 = Color(0xff505874);
   // static const Color maincolor1 = Color(0xff2A2A39);
 }

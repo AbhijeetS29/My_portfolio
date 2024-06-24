@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/Constants/colors.dart';
 import 'package:my_portfolio/Constants/nav_items.dart';
 import 'package:my_portfolio/Constants/size.dart';
+import 'package:my_portfolio/Widgets/SkillsDesktop.dart';
 import 'package:my_portfolio/Widgets/header_desktop.dart';
 import 'package:my_portfolio/Widgets/header_mobile.dart';
 import 'dart:js' as js;
@@ -85,7 +86,7 @@ class _HomePageState extends State<HomePage> {
               //
               //       // platforms and skills
               //       if (constraints.maxWidth >= kMedDesktopWidth)
-              //         const SkillsDesktop()
+                      const SkillsPanelDesktop()
               //       else
               //         const SkillsMobile(),
               //     ],
