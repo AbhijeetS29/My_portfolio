@@ -1,29 +1,33 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/Decoration/style.dart';
+
 import '../Constants/colors.dart';
 import '../Constants/skill_items.dart';
+import '../Decoration/style.dart';
 
-class SkillsPanelDesktop extends StatelessWidget {
-  const SkillsPanelDesktop({super.key});
+class SkillsMobile extends StatefulWidget {
+  const SkillsMobile({super.key});
 
+  @override
+  State<SkillsMobile> createState() => _SkillsMobileState();
+}
+
+class _SkillsMobileState extends State<SkillsMobile> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenHeight = screenSize.height;
-
     return Container(
       width: double.infinity,
-      height: screenHeight,
       constraints: const BoxConstraints(
         minHeight: 350.0,
       ),
       decoration: BoxDecoration(
-        color: Color(0xaffffff),
+          color: Color(0xaffffff),
           borderRadius: BorderRadius.circular(20)
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const Padding(
             padding: EdgeInsets.only(top: 55, left: 55),
@@ -52,30 +56,33 @@ class SkillsPanelDesktop extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 50),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                HoverContainer(
-                  imagePath: "assets/images/app-development.png",
-                  title: "App Development",
-                  description:
-                  "Bringing Your Ideas to Life with Innovative Mobile Solutions",
-                ),HoverContainer2(
+                SizedBox(height: 30,),
+
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    HoverContainer(
+                      imagePath: "assets/images/app-development.png",
+                      title: "App Development",
+                      description:
+                      "Bringing Your Ideas to Life with Innovative Mobile Solutions",
+                    ),
+                    SizedBox(height: 30,),
+                  HoverContainer2(
                   imagePath: "assets/images/ux.png",
                   title: "UI/UX Design",
                   description:
                   "“Crafting Engaging and Intuitive User Experiences”",
-                ),HoverContainer3(
+                ),
+                    SizedBox(height: 30,),HoverContainer3(
                   imagePath: "assets/images/help.png",
                   title: "Voluntary Work",
                   description:
                   "“Supporting non-profits with my skills and expertise to enhance their impact.”",
                 ),
-              ],
-            ),
-          ),
+                ],
+                ),
+
           SizedBox(height: 50,),
           Center(
             child: ConstrainedBox(
@@ -99,13 +106,13 @@ class SkillsPanelDesktop extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
+          SizedBox(height: 30,),
         ],
       ),
     );
   }
 }
-
 class HoverContainer extends StatefulWidget {
   final String imagePath;
   final String title;
@@ -191,8 +198,8 @@ class _HoverContainerState extends State<HoverContainer> {
             SizedBox(height: 45,),
             ElevatedButton(
                 onPressed: ()
-            {
-            },
+                {
+                },
                 style: ElevatedButton.styleFrom(
                   primary: CustomColor.whitePrimary, // Button color
                   onPrimary: CustomColor.scaffoldBg, // Text color

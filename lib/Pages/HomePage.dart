@@ -8,6 +8,7 @@ import 'package:my_portfolio/Widgets/header_mobile.dart';
 import 'dart:js' as js;
 import '../Constants/sns_links.dart';
 import '../Decoration/style.dart';
+import '../Widgets/SkillsMobile.dart';
 import '../Widgets/drawerM.dart';
 import '../Widgets/main_desktop.dart';
 import '../Widgets/main_mobile.dart';
@@ -65,33 +66,14 @@ class _HomePageState extends State<HomePage> {
                 const MainMobile(),
 
               // SKILLS
-              // Container(
-              //   key: navbarKeys[1],
-              //   width: screenWidth,
-              //   padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-              //   color: CustomColor.bgLight1,
-              //   child: Column(
-              //     mainAxisSize: MainAxisSize.min,
-              //     children: [
-              //       // title
-              //       const Text(
-              //         "What I can do",
-              //         style: TextStyle(
-              //           fontSize: 24,
-              //           fontWeight: FontWeight.bold,
-              //           color: CustomColor.whitePrimary,
-              //         ),
-              //       ),
-              //       const SizedBox(height: 50),
-              //
-              //       // platforms and skills
-              //       if (constraints.maxWidth >= kMedDesktopWidth)
+
+                    // platforms and skills
+                    if (constraints.maxWidth >= kMedDesktopWidth)
                       const SkillsPanelDesktop()
-              //       else
-              //         const SkillsMobile(),
-              //     ],
-              //   ),
-              // ),
+                    else
+                      const SkillsMobile(),
+
+
               // const SizedBox(height: 30),
               //
               // // PROJECTS

@@ -18,7 +18,7 @@ class MainMobile extends StatelessWidget {
           horizontal: 40.0,
           vertical: 30.0,
         ),
-        height: screenHeight,
+        
         width: double.maxFinite,
         constraints: const BoxConstraints(
           minHeight: 560.0,
