@@ -41,7 +41,7 @@ class MainDesktop extends StatelessWidget {
                       fontSize: 25,
                       height: 1.5,
                       fontWeight: FontWeight.w400,
-                      color: CustomColor.whitePrimary,
+                      color: CustomColor.maincolor2,
                     ),
                   ),
                 ),Text(
@@ -49,8 +49,8 @@ class MainDesktop extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 25,
                     height: 1.5,
-                    fontWeight: FontWeight.w600,
-                    color: CustomColor.yellowPrimary,
+                    fontWeight: FontWeight.w800,
+                    color: CustomColor.maincolor2,
                   ),
                 ),Text(
                   "An Application Developer",
@@ -58,7 +58,7 @@ class MainDesktop extends StatelessWidget {
                     fontSize: 25,
                     height: 1.5,
                     fontWeight: FontWeight.w400,
-                    color: CustomColor.whitePrimary,
+                    color: CustomColor.maincolor2,
                   ),
                 ),
                 const SizedBox(height: 15),
@@ -68,8 +68,8 @@ class MainDesktop extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      primary: CustomColor.yellowPrimary, // Button color
-                      onPrimary: CustomColor.whitePrimary, // Text color
+                      primary: CustomColor.maincolor2, // Button color
+                      onPrimary: CustomColor.maincolor1, // Text color
                       padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),

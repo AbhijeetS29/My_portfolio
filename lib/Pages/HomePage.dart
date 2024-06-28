@@ -67,11 +67,24 @@ class _HomePageState extends State<HomePage> {
 
               // SKILLS
 
+              Container(
+                key: navbarKeys[1],
+                width: screenWidth,
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // title
+                    const SizedBox(height: 50),
                     // platforms and skills
                     if (constraints.maxWidth >= kMedDesktopWidth)
                       const SkillsPanelDesktop()
                     else
                       const SkillsMobile(),
+                  ],
+                ),
+              ),
 
 
               // const SizedBox(height: 30),

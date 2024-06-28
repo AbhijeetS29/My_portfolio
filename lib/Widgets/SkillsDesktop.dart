@@ -18,7 +18,7 @@ class SkillsPanelDesktop extends StatelessWidget {
         minHeight: 350.0,
       ),
       decoration: BoxDecoration(
-        color: Color(0xaffffff),
+        color: Color(0x4dffffff),
           borderRadius: BorderRadius.circular(20)
       ),
       child: Column(
@@ -33,8 +33,8 @@ class SkillsPanelDesktop extends StatelessWidget {
                 fontFamily: 'Open Sans',
                 fontSize: 20,
                 height: 1.5,
-                fontWeight: FontWeight.w400,
-                color: CustomColor.whitePrimary,
+                fontWeight: FontWeight.w600,
+                color: CustomColor.maincolor2,
               ),
             ),
           ),
@@ -46,8 +46,8 @@ class SkillsPanelDesktop extends StatelessWidget {
                 fontFamily: 'Open Sans',
                 fontSize: 28,
                 height: 1.2,
-                fontWeight: FontWeight.w400,
-                color: CustomColor.whitePrimary,
+                fontWeight: FontWeight.w800,
+                color: CustomColor.maincolor2,
                 letterSpacing: 1.2,
               ),
             ),
@@ -61,45 +61,63 @@ class SkillsPanelDesktop extends StatelessWidget {
                   imagePath: "assets/images/app-development.png",
                   title: "App Development",
                   description:
-                  "Bringing Your Ideas to Life with Innovative Mobile Solutions",
+                  "“I am an Experienced application Developer , always at my best for Bringing Your Ideas to Life with Innovative Mobile Solutions”",
                 ),HoverContainer2(
                   imagePath: "assets/images/ux.png",
                   title: "UI/UX Design",
                   description:
-                  "“Crafting Engaging and Intuitive User Experiences”",
+                  "“I am an Experienced UI/Ux Designer always try to make Friendly designs for each and every user.”",
                 ),HoverContainer3(
                   imagePath: "assets/images/help.png",
                   title: "Voluntary Work",
                   description:
-                  "“Supporting non-profits with my skills and expertise to enhance their impact.”",
+                  "“I am an Experienced application Developer , always at my best for Bringing Your Ideas to Life with Innovative Mobile Solutions”",
                 ),
               ],
             ),
           ),
           SizedBox(height: 50,),
           Center(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(
+            child: Container(
+              constraints: BoxConstraints(
                 maxWidth: 500,
               ),
-              child: Wrap(
-                spacing: 40.0,
-                runSpacing: 40.0,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  for (int i = 0; i < skillItems.length; i++)
-                    Chip(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 12.0,
-                        horizontal: 16.0,
+                  Row(
+                    children: [
+                      Wrap(
+                        spacing: 10.0,
+                        runSpacing: 10.0,
+                        alignment: WrapAlignment.center,
+                        children: [
+                          for (int i = 0; i < skillItems.length; i++)
+                            Container(
+                              height: 60,
+                              decoration: kskillsDecoration2,
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset(skillItems[i]['img']),
+                                    SizedBox(width: 10),
+                                    Text(skillItems[i]['title']),
+                                  ],
+                                ),
+                              ),
+                            ),
+                        ],
                       ),
-                      backgroundColor: CustomColor.bgLight2,
-                      label: Text(skillItems[i]["title"]),
-                      avatar: Image.asset(skillItems[i]["img"]),
-                    ),
+                    ],
+                  ),
                 ],
               ),
             ),
           )
+
+
         ],
       ),
     );
@@ -140,17 +158,8 @@ class _HoverContainerState extends State<HoverContainer> {
         duration: const Duration(milliseconds: 300),
         transform:
         _isHovered ? (Matrix4.identity()..scale(1.1)) : Matrix4.identity(),
-        decoration: kskillsDecoration.copyWith(
-          boxShadow: [
-            BoxShadow(
-              color: CustomColor.scaffoldBg.withOpacity(0.9),
-              spreadRadius: 7,
-              blurRadius: 10,
-              offset: const Offset(0, 3),
-            ),
-          ],
-        ),
-        width: 250,
+        decoration: kskillsDecoration,
+        width: 270,
         height: 350,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -191,18 +200,18 @@ class _HoverContainerState extends State<HoverContainer> {
             SizedBox(height: 45,),
             ElevatedButton(
                 onPressed: ()
-            {
-            },
+                {
+                },
                 style: ElevatedButton.styleFrom(
-                  primary: CustomColor.whitePrimary, // Button color
-                  onPrimary: CustomColor.scaffoldBg, // Text color
+                  primary: CustomColor.maincolor1, // Button color
+                  onPrimary: CustomColor.maincolor1, // Text color
                   padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                   elevation: 5, // Shadow depth
                 ),
-                child: Text("Learn More ->"))
+                child: Text("Learn More ->",style: TextStyle(color: CustomColor.maincolor2),))
           ],
         ),
       ),
@@ -237,16 +246,7 @@ class _HoverContainer2State extends State<HoverContainer2> {
         duration: const Duration(milliseconds: 300),
         transform:
         _isHovered ? (Matrix4.identity()..scale(1.1)) : Matrix4.identity(),
-        decoration: kskillsDecoration.copyWith(
-          boxShadow: [
-            BoxShadow(
-              color: CustomColor.scaffoldBg.withOpacity(0.9),
-              spreadRadius: 7,
-              blurRadius: 10,
-              offset: const Offset(0, 3),
-            ),
-          ],
-        ),
+        decoration: kskillsDecoration,
         width: 250,
         height: 350,
         child: Column(
@@ -291,15 +291,15 @@ class _HoverContainer2State extends State<HoverContainer2> {
                 {
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: CustomColor.whitePrimary, // Button color
-                  onPrimary: CustomColor.scaffoldBg, // Text color
+                  primary: CustomColor.maincolor1, // Button color
+                  onPrimary: CustomColor.maincolor1, // Text color
                   padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                   elevation: 5, // Shadow depth
                 ),
-                child: Text("Learn More ->"))
+                child: Text("Learn More ->",style: TextStyle(color: CustomColor.maincolor2),))
           ],
         ),
       ),
@@ -333,16 +333,7 @@ class _HoverContainer3State extends State<HoverContainer3> {
         duration: const Duration(milliseconds: 300),
         transform:
         _isHovered ? (Matrix4.identity()..scale(1.1)) : Matrix4.identity(),
-        decoration: kskillsDecoration.copyWith(
-          boxShadow: [
-            BoxShadow(
-              color: CustomColor.scaffoldBg.withOpacity(0.9),
-              spreadRadius: 7,
-              blurRadius: 10,
-              offset: const Offset(0, 3),
-            ),
-          ],
-        ),
+        decoration: kskillsDecoration,
         width: 250,
         height: 350,
         child: Column(
@@ -387,15 +378,15 @@ class _HoverContainer3State extends State<HoverContainer3> {
                 {
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: CustomColor.whitePrimary, // Button color
-                  onPrimary: CustomColor.scaffoldBg, // Text color
+                  primary: CustomColor.maincolor1, // Button color
+                  onPrimary: CustomColor.maincolor1, // Text color
                   padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                   elevation: 5, // Shadow depth
                 ),
-                child: Text("Learn More ->"))
+                child: Text("Learn More ->",style: TextStyle(color: CustomColor.maincolor2),))
           ],
         ),
       ),

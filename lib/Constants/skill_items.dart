@@ -27,15 +27,29 @@ const List<Map> skillItems = [
     "title": "Dart",
   },
   {
-    "img": "assets/images/kotlib.png",
-    "title": "Kotlin",
-  },
-  {
-    "img": "assets/images/firebase.png",
-    "title": "Firebase",
+    "img": "assets/images/android.png",
+    "title": "Android Kotlin",
   },
   {
     "img": "assets/images/python.png",
     "title": "Python",
-  }
+  },
+];
+const List<Map> skillItems1 = [
+  {
+    "img": "assets/images/flutter.png",
+    "title": "Flutter",
+  },
+  {
+    "img": "assets/images/dart.png",
+    "title": "Dart",
+  },
+  {
+    "img": "assets/images/android.png",
+    "title": "Android Kotlin",
+  },
+  {
+    "img": "assets/images/python.png",
+    "title": "Python",
+  },
 ];
