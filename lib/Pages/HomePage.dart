@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/Constants/colors.dart';
 import 'package:my_portfolio/Constants/nav_items.dart';
 import 'package:my_portfolio/Constants/size.dart';
+import 'package:my_portfolio/Widgets/Projects_desktop.dart';
 import 'package:my_portfolio/Widgets/SkillsDesktop.dart';
+import 'package:my_portfolio/Widgets/divider_desktop.dart';
 import 'package:my_portfolio/Widgets/header_desktop.dart';
 import 'package:my_portfolio/Widgets/header_mobile.dart';
 import 'dart:js' as js;
@@ -33,7 +35,7 @@ class _HomePageState extends State<HomePage> {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
         key: scaffoldKey,
-        backgroundColor: CustomColor.maincolor1,
+        backgroundColor: CustomColor.maincolor3,
         endDrawer: constraints.maxWidth >= kMinDesktopWidth
             ? null
             : DrawerMobile(onNavItemTap: (int navIndex) {
@@ -43,68 +45,79 @@ class _HomePageState extends State<HomePage> {
         body: SingleChildScrollView(
           controller: scrollController,
           scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              SizedBox(key: navbarKeys.first),
-
-              // MAIN
-              if (constraints.maxWidth >= kMinDesktopWidth)
-                HeaderDesktop(onNavMenuTap: (int navIndex) {
-                  scrollToSection(navIndex);
-                })
-              else
-                HeaderMobile(
-                  onLogoTap: () {},
-                  onMenuTap: () {
-                    scaffoldKey.currentState?.openEndDrawer();
-                  },
-                ),
-
-              if (constraints.maxWidth >= kMinDesktopWidth)
-                const MainDesktop()
-              else
-                const MainMobile(),
-
-              // SKILLS
-
-              Container(
-                key: navbarKeys[1],
-                width: screenWidth,
-                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // title
-                    const SizedBox(height: 50),
-                    // platforms and skills
-                    if (constraints.maxWidth >= kMedDesktopWidth)
-                      const SkillsPanelDesktop()
-                    else
-                      const SkillsMobile(),
-                  ],
-                ),
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(25)
               ),
+             
+              child: Column(
+                children: [
+                  SizedBox(key: navbarKeys.first),
+
+                  // MAIN
+                  if (constraints.maxWidth >= kMinDesktopWidth)
+                    HeaderDesktop(onNavMenuTap: (int navIndex) {
+                      scrollToSection(navIndex);
+                    })
+                  else
+                    HeaderMobile(
+                      onLogoTap: () {},
+                      onMenuTap: () {
+                        scaffoldKey.currentState?.openEndDrawer();
+                      },
+                    ),
+
+                  if (constraints.maxWidth >= kMinDesktopWidth)
+                    const MainDesktop()
+                  else
+                    const MainMobile(),
+
+                  // SKILLS
+                  DividerDesktop(),
+
+                  Container(
+                    key: navbarKeys[1],
+                    width: screenWidth,
+                    padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // title
+                        const SizedBox(height: 50),
+                        // platforms and skills
+                        if (constraints.maxWidth >= kMedDesktopWidth)
+                          const SkillsPanelDesktop()
+                        else
+                          const SkillsMobile(),
+                      ],
+                    ),
+                  ),
 
 
-              // const SizedBox(height: 30),
-              //
-              // // PROJECTS
-              // ProjectsSection(
-              //   key: navbarKeys[2],
-              // ),
-              //
-              // const SizedBox(height: 30),
-              //
-              // // CONTACT
-              // ContactSection(
-              //   key: navbarKeys[3],
-              // ),
-              // const SizedBox(height: 30),
-              //
-              // // FOOTER
-              // const Footer(),
-            ],
+                  const SizedBox(height: 20),
+
+                  // PROJECTS
+                  ProjectsDesktop(
+                    key: navbarKeys[2],
+                  ),
+                  //
+                  // const SizedBox(height: 30),
+                  //
+                  // // CONTACT
+                  // ContactSection(
+                  //   key: navbarKeys[3],
+                  // ),
+                  // const SizedBox(height: 30),
+                  //
+                  // // FOOTER
+                  // const Footer(),
+                ],
+              ),
+            ),
           ),
         ),
       );

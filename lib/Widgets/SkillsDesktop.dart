@@ -12,13 +12,12 @@ class SkillsPanelDesktop extends StatelessWidget {
     final screenHeight = screenSize.height;
 
     return Container(
-      width: double.infinity,
-      height: screenHeight,
+
       constraints: const BoxConstraints(
         minHeight: 350.0,
       ),
       decoration: BoxDecoration(
-        color: Color(0x4dffffff),
+        color: CustomColor.maincolor3.withOpacity(0.5),
           borderRadius: BorderRadius.circular(20)
       ),
       child: Column(
@@ -30,11 +29,11 @@ class SkillsPanelDesktop extends StatelessWidget {
             child: Text(
               "-Services",
               style: TextStyle(
-                fontFamily: 'Open Sans',
+                fontFamily: 'Inika',
                 fontSize: 20,
                 height: 1.5,
                 fontWeight: FontWeight.w600,
-                color: CustomColor.maincolor2,
+                color: CustomColor.maincolor4,
               ),
             ),
           ),
@@ -43,11 +42,11 @@ class SkillsPanelDesktop extends StatelessWidget {
             child: Text(
               "My Services",
               style: TextStyle(
-                fontFamily: 'Open Sans',
+                fontFamily: 'Inika',
                 fontSize: 28,
                 height: 1.2,
                 fontWeight: FontWeight.w800,
-                color: CustomColor.maincolor2,
+                color: CustomColor.maincolor4,
                 letterSpacing: 1.2,
               ),
             ),
@@ -55,7 +54,7 @@ class SkillsPanelDesktop extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 50),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 HoverContainer(
                   imagePath: "assets/images/app-development.png",
@@ -80,7 +79,7 @@ class SkillsPanelDesktop extends StatelessWidget {
           Center(
             child: Container(
               constraints: BoxConstraints(
-                maxWidth: 500,
+                maxWidth: 600,
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -88,8 +87,8 @@ class SkillsPanelDesktop extends StatelessWidget {
                   Row(
                     children: [
                       Wrap(
-                        spacing: 10.0,
-                        runSpacing: 10.0,
+                        spacing: 20.0,
+                        runSpacing: 15.0,
                         alignment: WrapAlignment.center,
                         children: [
                           for (int i = 0; i < skillItems.length; i++)
@@ -111,6 +110,37 @@ class SkillsPanelDesktop extends StatelessWidget {
                         ],
                       ),
                     ],
+                  ),SizedBox(
+                    height: 25,
+                  ),Row(
+                    children: [
+                      Wrap(
+                        spacing: 20.0,
+                        runSpacing: 15.0,
+                        alignment: WrapAlignment.center,
+                        children: [
+                          for (int i = 0; i < skillItems.length; i++)
+                            Container(
+                              height: 60,
+                              decoration: kskillsDecoration2,
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset(skillItems1[i]['img']),
+                                    SizedBox(width: 10),
+                                    Text(skillItems1[i]['title']),
+                                  ],
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 25,
                   ),
                 ],
               ),
@@ -159,7 +189,7 @@ class _HoverContainerState extends State<HoverContainer> {
         transform:
         _isHovered ? (Matrix4.identity()..scale(1.1)) : Matrix4.identity(),
         decoration: kskillsDecoration,
-        width: 270,
+        width: 240,
         height: 350,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -203,15 +233,15 @@ class _HoverContainerState extends State<HoverContainer> {
                 {
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: CustomColor.maincolor1, // Button color
-                  onPrimary: CustomColor.maincolor1, // Text color
+                  primary: CustomColor.whitePrimary,
+                    onPrimary: CustomColor.whitePrimary,// Button color, // Text color
                   padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                   elevation: 5, // Shadow depth
                 ),
-                child: Text("Learn More ->",style: TextStyle(color: CustomColor.maincolor2),))
+                child: Text("Reach Out",style: TextStyle(color: CustomColor.maincolor4),))
           ],
         ),
       ),
@@ -291,15 +321,15 @@ class _HoverContainer2State extends State<HoverContainer2> {
                 {
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: CustomColor.maincolor1, // Button color
-                  onPrimary: CustomColor.maincolor1, // Text color
+                  primary: CustomColor.whitePrimary,
+                  onPrimary: CustomColor.whitePrimary,// Button color, // Text color
                   padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                   elevation: 5, // Shadow depth
                 ),
-                child: Text("Learn More ->",style: TextStyle(color: CustomColor.maincolor2),))
+                child: Text("Reach Out",style: TextStyle(color: CustomColor.maincolor4),))
           ],
         ),
       ),
@@ -378,15 +408,15 @@ class _HoverContainer3State extends State<HoverContainer3> {
                 {
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: CustomColor.maincolor1, // Button color
-                  onPrimary: CustomColor.maincolor1, // Text color
+                  primary: CustomColor.whitePrimary,
+                  onPrimary: CustomColor.whitePrimary,// Button color, // Text color
                   padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                   elevation: 5, // Shadow depth
                 ),
-                child: Text("Learn More ->",style: TextStyle(color: CustomColor.maincolor2),))
+                child: Text("Reach Out",style: TextStyle(color: CustomColor.maincolor4),))
           ],
         ),
       ),

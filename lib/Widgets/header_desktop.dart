@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import '../Constants/colors.dart';
 import '../Constants/nav_items.dart';
 import '../Decoration/site_logo.dart';
 import '../Decoration/style.dart';
-import '../constants/colors.dart';
 
 class HeaderDesktop extends StatelessWidget {
   const HeaderDesktop({
@@ -16,7 +16,7 @@ class HeaderDesktop extends StatelessWidget {
     return Container(
       height: 60.0,
       margin: const EdgeInsets.symmetric(
-        vertical: 10.0,
+        vertical: 20.0,
         horizontal: 20.0,
       ),
       width: double.maxFinite,
@@ -30,17 +30,17 @@ class HeaderDesktop extends StatelessWidget {
           const Spacer(),
           for (int i = 0; i < navTitles.length; i++)
             Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding:  EdgeInsets.only(right: 20),
               child: TextButton(
                 onPressed: () {
                   onNavMenuTap(i);
                 },
                 child: Text(
                   navTitles[i],
-                  style: const TextStyle(
+                  style:  TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
-                    color: CustomColor.whitePrimary,
+                    color: CustomColor.maincolor4,
                   ),
                 ),
               ),

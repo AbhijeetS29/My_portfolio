@@ -13,5 +13,7 @@ class CustomColor {
   static const Color maincolor1 = Color(0xffCCF4F2);
   static const Color maincolor2 = Color(0xff367773);
   static const Color maincolor23 = Color(0xff367773);
+  static const Color maincolor3 = Color(0xff7ACBE9);
+  static const Color maincolor4 = Color(0xff0B6383);
   // static const Color maincolor1 = Color(0xff2A2A39);
 }

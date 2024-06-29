@@ -34,8 +34,7 @@ const List<Map> skillItems = [
     "img": "assets/images/python.png",
     "title": "Python",
   },
-];
-const List<Map> skillItems1 = [
+];const List<Map> skillItemsM = [
   {
     "img": "assets/images/flutter.png",
     "title": "Flutter",
@@ -43,7 +42,9 @@ const List<Map> skillItems1 = [
   {
     "img": "assets/images/dart.png",
     "title": "Dart",
-  },
+  }
+];
+const List<Map> skillItemsM1 = [
   {
     "img": "assets/images/android.png",
     "title": "Android Kotlin",
@@ -52,4 +53,44 @@ const List<Map> skillItems1 = [
     "img": "assets/images/python.png",
     "title": "Python",
   },
+];
+const List<Map> skillItems1 = [
+  {
+    "img": "assets/images/xml.png",
+    "title": "XML",
+  },
+  {
+    "img": "assets/images/sql.png",
+    "title": "SQL",
+  },
+  {
+    "img": "assets/images/firebase.png",
+    "title": "Firebase",
+  },
+  {
+    "img": "assets/images/Figma.png",
+    "title": "figma",
+  },
+];
+const List<Map> skillItemsM2 = [
+  {
+    "img": "assets/images/xml.png",
+    "title": "XML",
+  },
+  {
+    "img": "assets/images/sql.png",
+    "title": "SQL",
+  },
+
+];
+const List<Map> skillItemsM3 = [
+  {
+    "img": "assets/images/firebase.png",
+    "title": "Firebase",
+  },
+  {
+    "img": "assets/images/Figma.png",
+    "title": "figma",
+  },
+
 ];

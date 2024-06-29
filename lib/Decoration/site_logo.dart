@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
+import '../Constants/colors.dart';
+
 
 class SiteLogo extends StatelessWidget {
   const SiteLogo({
@@ -12,12 +13,12 @@ class SiteLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: const Text(
+      child:  Text(
         "A.S",
         style: TextStyle(
           fontSize: 22,
           fontWeight: FontWeight.bold,
-          color: CustomColor.maincolor2,
+          color: CustomColor.maincolor4,
         ),
       ),
     );

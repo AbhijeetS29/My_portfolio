@@ -6,7 +6,7 @@ import '../Constants/colors.dart';
 BoxDecoration kHederDecoration = BoxDecoration(
   boxShadow: [
     BoxShadow(
-      color: CustomColor.maincolor2.withOpacity(0.5), // Shadow color
+      color: CustomColor.maincolor4.withOpacity(0.5), // Shadow color
       spreadRadius: 5, // Spread radius
       blurRadius: 7, // Blur radius
       offset: Offset(0, 3), // Offset in x and y direction
@@ -14,9 +14,9 @@ BoxDecoration kHederDecoration = BoxDecoration(
   ],
   gradient: const LinearGradient(
     colors: [
+      CustomColor.whitePrimary,
+      CustomColor.maincolor3,
 
-      CustomColor.maincolor1,
-      CustomColor.maincolor2,
 
     ],
 
@@ -37,13 +37,13 @@ BoxDecoration kmainDecoration = BoxDecoration(
 BoxDecoration kskillsDecoration = BoxDecoration(
   boxShadow: [
     BoxShadow(
-      color: CustomColor.maincolor2.withOpacity(0.5), // Shadow color
+      color: CustomColor.maincolor4.withOpacity(0.5), // Shadow color
       spreadRadius: 5, // Spread radius
       blurRadius: 7, // Blur radius
       offset: Offset(0, 3), // Offset in x and y direction
     ),
   ],
-  color: CustomColor.maincolor2,
+  color: CustomColor.maincolor4,
 
 
   borderRadius: BorderRadius.circular(30),
@@ -51,14 +51,28 @@ BoxDecoration kskillsDecoration = BoxDecoration(
 BoxDecoration kskillsDecoration2 = BoxDecoration(
   boxShadow: [
     BoxShadow(
-      color: CustomColor.maincolor2.withOpacity(0.5), // Shadow color
+      color: CustomColor.maincolor4.withOpacity(0.5), // Shadow color
       spreadRadius: 5, // Spread radius
       blurRadius: 7, // Blur radius
       offset: Offset(0, 3), // Offset in x and y direction
     ),
   ],
-  color: CustomColor.maincolor23,
+  color: CustomColor.maincolor4,
 
 
   borderRadius: BorderRadius.circular(17),
 );
+
+
+BoxDecoration projectdecoration = BoxDecoration(
+  color: CustomColor.maincolor1,
+  borderRadius: BorderRadius.circular(17),
+);
+
+
+//dividerbox
+BoxDecoration dividder = BoxDecoration(
+  color: CustomColor.maincolor3,
+  borderRadius: BorderRadius.circular(17),
+);
+

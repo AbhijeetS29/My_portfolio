@@ -13,7 +13,7 @@ class DrawerMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: CustomColor.scaffoldBg,
+      backgroundColor: Colors.white,
       child: ListView(
         children: [
           Align(
@@ -28,7 +28,7 @@ class DrawerMobile extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                icon: const Icon(Icons.close),
+                icon: const Icon(Icons.close,color: CustomColor.maincolor4,),
               ),
             ),
           ),
@@ -38,14 +38,14 @@ class DrawerMobile extends StatelessWidget {
                 horizontal: 30.0,
               ),
               titleTextStyle: const TextStyle(
-                color: CustomColor.whitePrimary,
+                color: CustomColor.maincolor4,
                 fontWeight: FontWeight.w600,
                 fontSize: 16,
               ),
               onTap: () {
                 onNavItemTap(i);
               },
-              leading: Icon(navIcons[i]),
+              leading: Icon(navIcons[i],color: CustomColor.maincolor4,),
               title: Text(navTitles[i]),
             )
         ],

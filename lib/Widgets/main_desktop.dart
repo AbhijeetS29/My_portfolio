@@ -35,13 +35,13 @@ class MainDesktop extends StatelessWidget {
                 // intro message
                 Align(
                  alignment: Alignment.topLeft
-                  ,child: const Text(
+                  ,child:  Text(
                     " Hey! I'm ",
                     style: TextStyle(
                       fontSize: 25,
                       height: 1.5,
                       fontWeight: FontWeight.w400,
-                      color: CustomColor.maincolor2,
+                      color: CustomColor.maincolor4,
                     ),
                   ),
                 ),Text(
@@ -50,7 +50,7 @@ class MainDesktop extends StatelessWidget {
                     fontSize: 25,
                     height: 1.5,
                     fontWeight: FontWeight.w800,
-                    color: CustomColor.maincolor2,
+                    color: CustomColor.maincolor4,
                   ),
                 ),Text(
                   "An Application Developer",
@@ -58,7 +58,7 @@ class MainDesktop extends StatelessWidget {
                     fontSize: 25,
                     height: 1.5,
                     fontWeight: FontWeight.w400,
-                    color: CustomColor.maincolor2,
+                    color: CustomColor.maincolor4,
                   ),
                 ),
                 const SizedBox(height: 15),
@@ -68,8 +68,8 @@ class MainDesktop extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      primary: CustomColor.maincolor2, // Button color
-                      onPrimary: CustomColor.maincolor1, // Text color
+                      primary: CustomColor.maincolor4, // Button color
+                      onPrimary: CustomColor.maincolor3, // Text color
                       padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
@@ -88,8 +88,8 @@ class MainDesktop extends StatelessWidget {
             ),
             // avatar img
             Image.asset(
-              "assets/images/mainpic.png",
-              width: screenWidth / 2.5,
+              "assets/images/mainpic1.png",
+              width: screenWidth / 3,
             ),
           ],
         ),
