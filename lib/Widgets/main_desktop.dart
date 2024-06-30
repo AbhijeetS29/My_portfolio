@@ -76,7 +76,7 @@ class MainDesktop extends StatelessWidget {
                       ),
                       elevation: 5, // Shadow depth
                     ),
-                    child: const Text("Get in touch",style: TextStyle(
+                    child: const Text("Curriculum vitae",style: TextStyle(
                       fontSize: 18,
                       height: 1.2,
                       fontWeight: FontWeight.bold,

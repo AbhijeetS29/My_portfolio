@@ -65,7 +65,7 @@ BoxDecoration kskillsDecoration2 = BoxDecoration(
 
 
 BoxDecoration projectdecoration = BoxDecoration(
-  color: CustomColor.maincolor1,
+  color: CustomColor.whitePrimary,
   borderRadius: BorderRadius.circular(17),
 );
 

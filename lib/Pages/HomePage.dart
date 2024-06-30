@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/Constants/colors.dart';
 import 'package:my_portfolio/Constants/nav_items.dart';
 import 'package:my_portfolio/Constants/size.dart';
+import 'package:my_portfolio/Widgets/Project_Mid_RAnge.dart';
 import 'package:my_portfolio/Widgets/Projects_desktop.dart';
+import 'package:my_portfolio/Widgets/Projects_mobile.dart';
 import 'package:my_portfolio/Widgets/SkillsDesktop.dart';
 import 'package:my_portfolio/Widgets/divider_desktop.dart';
+import 'package:my_portfolio/Widgets/get_in_touch.dart';
 import 'package:my_portfolio/Widgets/header_desktop.dart';
 import 'package:my_portfolio/Widgets/header_mobile.dart';
 import 'dart:js' as js;
@@ -101,16 +104,33 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(height: 20),
 
                   // PROJECTS
-                  ProjectsDesktop(
+                  Container(
                     key: navbarKeys[2],
+                    width: screenWidth,
+                    padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        // title
+                        const SizedBox(height: 50),
+                        // platforms and skills
+                        if (constraints.maxWidth >= kMedDesktopWidth2)
+                          const ProjectsDesktop()
+                          else if(constraints.maxWidth >= kMedDesktopWidth)
+                            const ProjectMid()
+                        else
+                          const ProjectMobile(),
+                      ],
+                    ),
                   ),
                   //
                   // const SizedBox(height: 30),
                   //
                   // // CONTACT
-                  // ContactSection(
-                  //   key: navbarKeys[3],
-                  // ),
+                  GetTouch(
+                    key: navbarKeys[3],
+                  ),
                   // const SizedBox(height: 30),
                   //
                   // // FOOTER
