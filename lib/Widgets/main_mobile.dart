@@ -72,14 +72,6 @@ class MainMobile extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: CustomColor.maincolor4,
               ),
-            ),Text(
-              "An Application Developer",
-              style: TextStyle(
-                fontSize: 20,
-                height: 1.5,
-                fontWeight: FontWeight.w400,
-                color: CustomColor.maincolor4,
-              ),
             ),
             const SizedBox(height: 15),
             // contact btn
@@ -96,14 +88,24 @@ class MainMobile extends StatelessWidget {
                   ),
                   elevation: 5, // Shadow depth
                 ),
-                child: const Text("Get in touch",style: TextStyle(
+                child: const Text("CV",style: TextStyle(
                   fontSize: 18,
                   height: 1.2,
                   fontWeight: FontWeight.bold,
                   color: CustomColor.whitePrimary,
                 ),),
               ),
-            )
+              
+            ),
+
+            SizedBox(height: 23,),
+            Text("I am an experienced application and web developer with expertise in Flutter and Kotlin. I excel in creating user-friendly designs and have a strong track record in delivering high-quality projects."
+                ,style: TextStyle(
+                  fontSize: 18,
+                  height: 1.2,
+                  fontWeight: FontWeight.w500,
+                  color: CustomColor.maincolor4,
+                ))
           ],
         ),
       ),
