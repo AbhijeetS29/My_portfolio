@@ -15,5 +15,12 @@ class CustomColor {
   static const Color maincolor23 = Color(0xff367773);
   static const Color maincolor3 = Color(0xff7ACBE9);
   static const Color maincolor4 = Color(0xff0B6383);
+
+
   // static const Color maincolor1 = Color(0xff2A2A39);
 }
+const secondaryColor = Color(0xFF242430);
+const darkColor = Color(0xFF191923);
+const bodyTextColor = Color(0xFF8B8B8D);
+const bgColor = Color(0xFF00091C);
+const defaultPadding = 20.0;

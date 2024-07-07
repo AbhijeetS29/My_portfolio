@@ -21,10 +21,7 @@ class MainDesktop extends StatelessWidget {
         constraints: const BoxConstraints(
           minHeight: 350.0,
         ),
-        decoration: BoxDecoration(
-          color: Color(0xaffffff),
-              borderRadius: BorderRadius.circular(10)
-        ),
+
 
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

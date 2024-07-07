@@ -22,7 +22,7 @@ List<ProjectUtils> workProjectUtils = [
     language:"assets/images/android.png",
     subtitle:
         'A synchronizedx Mobile application as well as Computer Software, based on Task Management System, built in order to bring time management in ordinary life of people',
-    webLink: 'https://www.externally.unavailable.project',
+    webLink: 'https://github.com/AbhijeetS29/TaskNinja',
   ),
   ProjectUtils(
     image: 'assets/images/reading-book.png',
@@ -55,7 +55,7 @@ List<ProjectUtils> workProjectUtils1 = [
     language:"assets/images/flutter.png",
     subtitle:
         'A Random Project where scrap collectors can calculate the prize of waste collected, just by adding its weight and rate per weight  of different different objects.',
-    webLink: 'https://www.externally.unavailable.project',
+    webLink: 'https://github.com/AbhijeetS29/Scrap_calculator',
   )
 ];
 
@@ -111,7 +111,7 @@ List<ProjectUtils> workProjectUtils4 = [
     language:"assets/images/android.png",
     subtitle:
     'A synchronizedx Mobile application as well as Computer Software, based on Task Management System, built in order to bring time management in ordinary life of people',
-    webLink: 'https://www.externally.unavailable.project',
+    webLink: 'https://github.com/AbhijeetS29/TaskNinja',
   ),
   ProjectUtils(
     image: 'assets/images/reading-book.png',

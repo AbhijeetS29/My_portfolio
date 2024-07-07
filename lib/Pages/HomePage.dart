@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
         key: scaffoldKey,
-        backgroundColor: CustomColor.maincolor3,
+        backgroundColor: bgColor,
         endDrawer: constraints.maxWidth >= kMinDesktopWidth
             ? null
             : DrawerMobile(onNavItemTap: (int navIndex) {
@@ -52,90 +52,112 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(15.0),
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(25)
-              ),
-             
-              child: Column(
-                children: [
-                  SizedBox(key: navbarKeys.first),
-
-                  // MAIN
-                  if (constraints.maxWidth >= kMinDesktopWidth)
-                    HeaderDesktop(onNavMenuTap: (int navIndex) {
-                      scrollToSection(navIndex);
-                    })
-                  else
-                    HeaderMobile(
-                      onLogoTap: () {},
-                      onMenuTap: () {
-                        scaffoldKey.currentState?.openEndDrawer();
-                      },
-                    ),
-
-                  if (constraints.maxWidth >= kMinDesktopWidth)
-                    const MainDesktop()
-                  else
-                    const MainMobile(),
-
-                  // SKILLS
-                  DividerDesktop(),
-
-                  Container(
-                    key: navbarKeys[1],
-                    width: screenWidth,
-                    padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        // title
-                        const SizedBox(height: 50),
-                        // platforms and skills
-                        if (constraints.maxWidth >= kMedDesktopWidth)
-                          const SkillsPanelDesktop()
-                        else
-                          const SkillsMobile(),
-                      ],
-                    ),
+                borderRadius: BorderRadius.circular(30),
+                gradient: const LinearGradient(colors: [
+                  Colors.pinkAccent,
+                  Colors.blue,
+                ]),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.pink,
+                    offset: Offset(-2, 0),
+                    blurRadius: 20,
                   ),
-
-
-                  const SizedBox(height: 20),
-
-                  // PROJECTS
-                  Container(
-                    key: navbarKeys[2],
-                    width: screenWidth,
-                    padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        // title
-                        const SizedBox(height: 50),
-                        // platforms and skills
-                        if (constraints.maxWidth >= kMedDesktopWidth2)
-                          const ProjectsDesktop()
-                          else if(constraints.maxWidth >= kMedDesktopWidth)
-                            const ProjectMid()
-                        else
-                          const ProjectMobile(),
-                      ],
-                    ),
+                  BoxShadow(
+                    color: Colors.blue,
+                    offset: Offset(2, 0),
+                    blurRadius: 20,
                   ),
-                  //
-                  // const SizedBox(height: 30),
-                  //
-                  // // CONTACT
-                  GetTouch(
-                    key: navbarKeys[3],
-                  ),
-                  // const SizedBox(height: 30),
-                  //
-                  // // FOOTER
-                  // const Footer(),
                 ],
+              ),
+              child: Container(
+
+decoration: BoxDecoration(
+    color: bgColor,
+  borderRadius: BorderRadius.circular(15)
+),
+
+                child: Column(
+                  children: [
+                    SizedBox(key: navbarKeys.first),
+
+                    // MAIN
+                    if (constraints.maxWidth >= kMinDesktopWidth)
+                      HeaderDesktop(onNavMenuTap: (int navIndex) {
+                        scrollToSection(navIndex);
+                      })
+                    else
+                      HeaderMobile(
+                        onLogoTap: () {},
+                        onMenuTap: () {
+                          scaffoldKey.currentState?.openEndDrawer();
+                        },
+                      ),
+
+                    if (constraints.maxWidth >= kMinDesktopWidth)
+                      const MainDesktop()
+                    else
+                      const MainMobile(),
+
+                    // SKILLS
+                    DividerDesktop(),
+
+                    Container(
+                      key: navbarKeys[1],
+                      width: screenWidth,
+                      padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          // title
+                          const SizedBox(height: 50),
+                          // platforms and skills
+                          if (constraints.maxWidth >= kMedDesktopWidth)
+                            const SkillsPanelDesktop()
+                          else
+                            const SkillsMobile(),
+                        ],
+                      ),
+                    ),
+
+
+                    const SizedBox(height: 20),
+
+                    // PROJECTS
+                    Container(
+                      key: navbarKeys[2],
+                      width: screenWidth,
+                      padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          // title
+                          const SizedBox(height: 50),
+                          // platforms and skills
+                          if (constraints.maxWidth >= kMedDesktopWidth2)
+                            const ProjectsDesktop()
+                            else if(constraints.maxWidth >= kMedDesktopWidth)
+                              const ProjectMid()
+                          else
+                            const ProjectMobile(),
+                        ],
+                      ),
+                    ),
+                    //
+                    // const SizedBox(height: 30),
+                    //
+                    // // CONTACT
+                    GetTouch(
+                      key: navbarKeys[3],
+                    ),
+                    // const SizedBox(height: 30),
+                    //
+                    // // FOOTER
+                    // const Footer(),
+                  ],
+                ),
               ),
             ),
           ),

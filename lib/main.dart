@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/Pages/HomePage.dart';
+import 'package:my_portfolio/splash/splash_view.dart';
 
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Portfolio',
       theme: ThemeData.dark(),
-      home: const HomePage(),
+      home: const SplashView(),
     );
   }
 }

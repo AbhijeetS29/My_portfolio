@@ -3,6 +3,7 @@ import 'package:my_portfolio/Constants/colors.dart';
 import 'package:my_portfolio/Constants/project_utils.dart';
 import 'package:my_portfolio/Decoration/style.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectsDesktop extends StatefulWidget {
   const ProjectsDesktop({super.key});
@@ -220,8 +221,13 @@ class ProjectCardWidget extends StatelessWidget {
                   ),
                 ),
                 ElevatedButton(
-                    onPressed: ()
-                    {
+                    onPressed: () async {
+                      var url = project.webLink;
+                      if (await canLaunch(url!)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       primary: CustomColor.whitePrimary,
