@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/AboutSection/AboutUsHeading.dart';
 import 'package:my_portfolio/Constants/colors.dart';
 import 'package:my_portfolio/Constants/nav_items.dart';
 import 'package:my_portfolio/Constants/size.dart';
 import 'package:my_portfolio/Widgets/Project_Mid_RAnge.dart';
 import 'package:my_portfolio/Widgets/Projects_desktop.dart';
 import 'package:my_portfolio/Widgets/Projects_mobile.dart';
-import 'package:my_portfolio/Widgets/SkillsDesktop.dart';
+import 'package:my_portfolio/AboutSection/AboutHeading.dart';
 import 'package:my_portfolio/Widgets/divider_desktop.dart';
 import 'package:my_portfolio/Widgets/get_in_touch.dart';
 import 'package:my_portfolio/Widgets/header_desktop.dart';
 import 'package:my_portfolio/Widgets/header_mobile.dart';
 import 'dart:js' as js;
+import '../AboutSection/AboutMobile.dart';
+import '../AboutSection/AboutUsDetailing.dart';
 import '../Constants/sns_links.dart';
 import '../Decoration/style.dart';
-import '../Widgets/SkillsMobile.dart';
+import '../Skills Section/SkillsMobile.dart';
 import '../Widgets/drawerM.dart';
 import '../Widgets/main_desktop.dart';
 import '../Widgets/main_mobile.dart'; // Ensure correct casing here
@@ -42,9 +45,9 @@ class _HomePageState extends State<HomePage> {
         endDrawer: constraints.maxWidth >= kMinDesktopWidth
             ? null
             : DrawerMobile(onNavItemTap: (int navIndex) {
-          scaffoldKey.currentState?.closeEndDrawer();
-          scrollToSection(navIndex);
-        }),
+                scaffoldKey.currentState?.closeEndDrawer();
+                scrollToSection(navIndex);
+              }),
         body: SingleChildScrollView(
           controller: scrollController,
           scrollDirection: Axis.vertical,
@@ -92,29 +95,51 @@ class _HomePageState extends State<HomePage> {
 
                     if (constraints.maxWidth >= kMedDesktopWidth2)
                       const MainDesktop()
-
                     else
-                       MainMobile(onNavMenuTap: (int navIndex) {
-                        scrollToSection(navIndex);
-                      },),
+                      MainMobile(
+                        onNavMenuTap: (int navIndex) {
+                          scrollToSection(navIndex);
+                        },
+                      ),
 
                     // SKILLS
                     DividerDesktop(),
 
                     Container(
                       key: navbarKeys[1],
+                      // Assuming this is correctly defined elsewhere
                       width: screenWidth,
                       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          // title
-                          const SizedBox(height: 50),
-                          // platforms and skills
+                          const SizedBox(height: 50), // Adjust as needed
+
+                          // Desktop Layout: Skills Panel and About Us
                           if (constraints.maxWidth >= kMedDesktopWidth)
-                            const SkillsPanelDesktop()
-                          else
-                            const SkillsMobile(),
+                            Column(
+                              children: [
+                                const AboutHeading(start: 0, end: 40),
+                                // Adjust start and end parameters as needed
+                                const SizedBox(height: 20),
+                                // Adjust spacing between sections
+                                 const AboutMe(),
+                                // Adjust start and end parameters as needed
+                              ],
+                            ),
+
+                          // Mobile Layout: Skills Mobile
+                          if (constraints.maxWidth < kMedDesktopWidth)
+                            Column(
+                              children: [
+                                const AboutHeading(start: 0, end: 40),
+                                // Adjust start and end parameters as needed
+                                const SizedBox(height: 20),
+                                // Adjust spacing between sections
+                                const AboutusMobile(),
+                                // Adjust start and end parameters as needed
+                              ],
+                            ),
                         ],
                       ),
                     ),

@@ -3,141 +3,81 @@ import 'package:my_portfolio/Decoration/style.dart';
 import '../Constants/colors.dart';
 import '../Constants/skill_items.dart';
 
-class SkillsPanelDesktop extends StatelessWidget {
-  const SkillsPanelDesktop({super.key});
+class AboutHeading extends StatelessWidget {
+  const AboutHeading({super.key, required this.start, required this.end});
+  final double start;
+  final double end;
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenHeight = screenSize.height;
-
-    return Container(
-
-      constraints: const BoxConstraints(
-        minHeight: 350.0,
-      ),
-      decoration: BoxDecoration(
-        color: CustomColor.maincolor3.withOpacity(0.5),
-          borderRadius: BorderRadius.circular(20)
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-
-          const Padding(
-            padding: EdgeInsets.only(top: 25, left: 60),
-            child: Text(
-              "My Services",
-              style: TextStyle(
-                fontFamily: 'Inika',
-                fontSize: 28,
-                height: 1.2,
-                fontWeight: FontWeight.w800,
-                color: CustomColor.maincolor4,
-                letterSpacing: 1.2,
-              ),
+    return TweenAnimationBuilder<double>(
+      tween: Tween<double>(begin: 0, end: end),
+      duration: const Duration(milliseconds: 900),
+      builder: (context, value, child) {
+        return RichText(
+          text: TextSpan(
+            style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+              color: Colors.white,
+              fontWeight: FontWeight.w900,
+              height: 0,
+              fontSize: value,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 50),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                HoverContainer(
-                  imagePath: "assets/images/app-development.png",
-                  title: "App Development",
-                  description:
-                  "“I am an Experienced application Developer , always at my best for Bringing Your Ideas to Life with Innovative Mobile Solutions”",
-                ),HoverContainer2(
-                  imagePath: "assets/images/ux.png",
-                  title: "UI/UX Design",
-                  description:
-                  "“I am an Experienced UI/Ux Designer always try to make Friendly designs for each and every user.”",
-                ),HoverContainer3(
-                  imagePath: "assets/images/help.png",
-                  title: "Voluntary Work",
-                  description:
-                  "“I am an Experienced application Developer , always at my best for Bringing Your Ideas to Life with Innovative Mobile Solutions”",
+            children: [
+              WidgetSpan(
+                child: TweenAnimationBuilder<double>(
+                  tween: Tween<double>(begin: 0, end: value),
+                  duration: const Duration(milliseconds: 200),
+                  builder: (context, tweenValue, child) {
+                    return  Text(
+                      'About',
+                      style: TextStyle(
+                        fontSize: tweenValue,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    );
+                  },
                 ),
-              ],
-            ),
+              ),
+              TextSpan(
+                text: ' ',
+                style: TextStyle(
+                  fontSize: value,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+              WidgetSpan(
+                child: TweenAnimationBuilder<double>(
+                  tween: Tween<double>(begin: 0, end: value),
+                  duration: const Duration(milliseconds: 200),
+                  builder: (context, tweenValue, child) {
+                    return ShaderMask(
+                      shaderCallback: (bounds) {
+                        return LinearGradient(
+                          colors: <Color>[Colors.pinkAccent, Colors.blueAccent],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ).createShader(bounds);
+                      },
+                      child: Text(
+                        'US',
+                        style: TextStyle(
+                          fontSize: tweenValue,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
-          SizedBox(height: 50,),
-          Center(
-            child: Container(
-              constraints: BoxConstraints(
-                maxWidth: 600,
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Row(
-                    children: [
-                      Wrap(
-                        spacing: 20.0,
-                        runSpacing: 15.0,
-                        alignment: WrapAlignment.center,
-                        children: [
-                          for (int i = 0; i < skillItems.length; i++)
-                            Container(
-                              height: 60,
-                              decoration: kskillsDecoration2,
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image.asset(skillItems[i]['img']),
-                                    SizedBox(width: 10),
-                                    Text(skillItems[i]['title']),
-                                  ],
-                                ),
-                              ),
-                            ),
-                        ],
-                      ),
-                    ],
-                  ),SizedBox(
-                    height: 25,
-                  ),Row(
-                    children: [
-                      Wrap(
-                        spacing: 20.0,
-                        runSpacing: 15.0,
-                        alignment: WrapAlignment.center,
-                        children: [
-                          for (int i = 0; i < skillItems.length; i++)
-                            Container(
-                              height: 60,
-                              decoration: kskillsDecoration2,
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Image.asset(skillItems1[i]['img']),
-                                    SizedBox(width: 10),
-                                    Text(skillItems1[i]['title']),
-                                  ],
-                                ),
-                              ),
-                            ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 25,
-                  ),
-                ],
-              ),
-            ),
-          )
-
-
-        ],
-      ),
+        );
+      },
     );
   }
 }

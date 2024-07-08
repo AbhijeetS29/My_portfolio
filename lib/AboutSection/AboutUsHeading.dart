@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 
-class SubTitles extends StatelessWidget {
-  const SubTitles({super.key, required this.start, required this.end});
+class AboutUs extends StatefulWidget {
+  const AboutUs({super.key, required this.start, required this.end});
   final double start;
   final double end;
 
   @override
+  State<AboutUs> createState() => _AboutUsState();
+}
 
-
+class _AboutUsState extends State<AboutUs> {
+  @override
   Widget build(BuildContext context) {
-
+    final screenSize = MediaQuery.of(context).size;
+    final screenHeight = screenSize.height;
     return TweenAnimationBuilder<double>(
-      tween: Tween<double>(begin: 0, end: end),
-      duration: const Duration(milliseconds: 200),
+      tween: Tween<double>(begin: 0, end: widget.end),
+      duration: const Duration(milliseconds: 900),
       builder: (context, value, child) {
         return RichText(
           text: TextSpan(
@@ -29,37 +33,13 @@ class SubTitles extends StatelessWidget {
                   duration: const Duration(milliseconds: 200),
                   builder: (context, tweenValue, child) {
                     return  Text(
-                        'A',
-                        style: TextStyle(
-                          fontSize: tweenValue,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w900,
-                        ),
+                      'About',
+                      style: TextStyle(
+                        fontSize: tweenValue,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w900,
+                      ),
                     );
-                  },
-                ),
-              ),TextSpan(
-                text: ' ',
-                style: TextStyle(
-                  fontSize: value,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),WidgetSpan(
-                child: TweenAnimationBuilder<double>(
-                  tween: Tween<double>(begin: 0, end: value),
-                  duration: const Duration(milliseconds: 200),
-                  builder: (context, tweenValue, child) {
-                    return
-                      Text(
-                        'Flutter',
-                        style: TextStyle(
-                          fontSize: tweenValue,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w900,
-                        ),
-                      );
-
                   },
                 ),
               ),
@@ -85,7 +65,7 @@ class SubTitles extends StatelessWidget {
                         ).createShader(bounds);
                       },
                       child: Text(
-                        'Developer',
+                        'US',
                         style: TextStyle(
                           fontSize: tweenValue,
                           color: Colors.white,

@@ -13,6 +13,4 @@ List<IconData> navIcons = [
 
   Icons.design_services,
   Icons.apps,
-
-
 ];

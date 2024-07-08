@@ -16,7 +16,25 @@ class _DividerDesktopState extends State<DividerDesktop> {
       child: Container(
         width: double.infinity,
         height: 3,
-        decoration: dividder
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          gradient: const LinearGradient(colors: [
+            Colors.pinkAccent,
+            Colors.blue,
+          ]),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.pink,
+              offset: Offset(-2, 0),
+              blurRadius: 20,
+            ),
+            BoxShadow(
+              color: Colors.blue,
+              offset: Offset(2, 0),
+              blurRadius: 20,
+            ),
+          ],
+        ),
       ),
     );
   }
