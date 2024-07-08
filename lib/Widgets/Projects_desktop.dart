@@ -81,7 +81,8 @@ class _ProjectsDesktopState extends State<ProjectsDesktop> {
                   ),
                 ),
             ],
-          ),SizedBox(height: 25,),Row(
+          ),
+          SizedBox(height: 25,),Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               for (int i = 0; i < workProjectUtils1.length; i++)

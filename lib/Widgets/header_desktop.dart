@@ -27,6 +27,8 @@ class HeaderDesktop extends StatelessWidget {
               onTap: () {},
             ),
             Spacer(), // Adds space between SiteLogo and the navigation items
+
+
             for (int i = 0; i < navTitles.length; i++)
               Padding(
                 padding: EdgeInsets.only(right: 20),
@@ -60,37 +62,35 @@ class HeaderDesktop extends StatelessWidget {
             Spacer(), // Adds space between the navigation items and the last container
             GestureDetector(
               onTap: () {
-                // Your onTap logic here
+
               },
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
                 decoration: BoxDecoration(
-                  gradient: const LinearGradient(colors: [
-                    Colors.pinkAccent,
-                    Colors.blueAccent,
-                  ]),
-                  borderRadius: BorderRadius.circular(8.0),
-                  boxShadow: const [
-                    BoxShadow(
-                      color: Colors.pink,
-                      offset: Offset(-2, 0),
-                      blurRadius: 20,
-                    ),
-                    BoxShadow(
-                      color: Colors.blue,
-                      offset: Offset(2, 0),
-                      blurRadius: 20,
-                    ),
-                  ],
+                    borderRadius: BorderRadius.circular(defaultPadding),
+                    gradient: LinearGradient(colors: [
+                      Colors.pink,
+                      Colors.blue.shade900,
+                    ]),
+                    boxShadow:const [
+                      BoxShadow(color: Colors.blue,offset: Offset(0, -1),blurRadius: defaultPadding/4),
+                      BoxShadow(color: Colors.red,offset: Offset(0, 1),blurRadius: defaultPadding/4),
+                    ]
                 ),
-                child: Text(
-                  "Whatsapp",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontFamily: 'Open Sans',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                child: Row(
+                  children: [
+                    Text(
+                      "Download CV",
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontFamily: 'Open Sans',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text("  "),
+                    Icon(Icons.download)
+                  ],
                 ),
               ),
             ),

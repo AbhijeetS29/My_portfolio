@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../responsive.dart';
+import '../responsive.dart';
 
 
 class AnimatedDescriptionText extends StatelessWidget {
@@ -15,7 +15,7 @@ class AnimatedDescriptionText extends StatelessWidget {
       duration: const Duration(milliseconds: 200),
       builder: (context, value, child) {
         return Text(
-          'I\'m capable of creating excellent mobile apps, handling${Responsive.isLargeMobile(context) ? '\n' : ''}every step from ${!Responsive.isLargeMobile(context) ? '\n' : ''}concept to deployment.',
+          'I am an experienced application and web developer with expertise\nin Flutter and Kotlin.I also excel in creating user-friendly designs',
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(color: Colors.grey, wordSpacing: 2, fontSize: value),

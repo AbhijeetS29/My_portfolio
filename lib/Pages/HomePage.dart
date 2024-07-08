@@ -16,7 +16,7 @@ import '../Decoration/style.dart';
 import '../Widgets/SkillsMobile.dart';
 import '../Widgets/drawerM.dart';
 import '../Widgets/main_desktop.dart';
-import '../Widgets/main_mobile.dart';
+import '../Widgets/main_mobile.dart'; // Ensure correct casing here
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -71,18 +71,14 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               child: Container(
-
-decoration: BoxDecoration(
-    color: bgColor,
-  borderRadius: BorderRadius.circular(15)
-),
-
+                decoration: BoxDecoration(
+                    color: bgColor, borderRadius: BorderRadius.circular(15)),
                 child: Column(
                   children: [
                     SizedBox(key: navbarKeys.first),
 
                     // MAIN
-                    if (constraints.maxWidth >= kMinDesktopWidth)
+                    if (constraints.maxWidth >= kMedDesktopWidth2)
                       HeaderDesktop(onNavMenuTap: (int navIndex) {
                         scrollToSection(navIndex);
                       })
@@ -94,10 +90,13 @@ decoration: BoxDecoration(
                         },
                       ),
 
-                    if (constraints.maxWidth >= kMinDesktopWidth)
+                    if (constraints.maxWidth >= kMedDesktopWidth2)
                       const MainDesktop()
+
                     else
-                      const MainMobile(),
+                       MainMobile(onNavMenuTap: (int navIndex) {
+                        scrollToSection(navIndex);
+                      },),
 
                     // SKILLS
                     DividerDesktop(),
@@ -106,7 +105,6 @@ decoration: BoxDecoration(
                       key: navbarKeys[1],
                       width: screenWidth,
                       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -121,7 +119,6 @@ decoration: BoxDecoration(
                       ),
                     ),
 
-
                     const SizedBox(height: 20),
 
                     // PROJECTS
@@ -129,7 +126,6 @@ decoration: BoxDecoration(
                       key: navbarKeys[2],
                       width: screenWidth,
                       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -138,8 +134,8 @@ decoration: BoxDecoration(
                           // platforms and skills
                           if (constraints.maxWidth >= kMedDesktopWidth2)
                             const ProjectsDesktop()
-                            else if(constraints.maxWidth >= kMedDesktopWidth)
-                              const ProjectMid()
+                          else if (constraints.maxWidth >= kMedDesktopWidth)
+                            const ProjectMid()
                           else
                             const ProjectMobile(),
                         ],

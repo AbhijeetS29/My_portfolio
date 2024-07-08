@@ -19,7 +19,7 @@ class HeaderMobile extends StatelessWidget {
       height: 50.0,
       margin: const EdgeInsets.fromLTRB(20, 20, 20, 5),
       width: double.maxFinite,
-      decoration: kHederDecoration,
+
       child: Row(
         children: [
           SizedBox(width: 20,),
@@ -27,9 +27,39 @@ class HeaderMobile extends StatelessWidget {
             onTap: onLogoTap,
           ),
           const Spacer(),
-          IconButton(
-            onPressed: onMenuTap,
-            icon: Icon(Icons.menu_outlined,color: CustomColor.maincolor4,),
+          GestureDetector(
+            onTap: (){
+
+            },
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(defaultPadding),
+                  gradient: LinearGradient(colors: [
+                    Colors.pink,
+                    Colors.blue.shade900,
+                  ]),
+                  boxShadow:const [
+                    BoxShadow(color: Colors.blue,offset: Offset(0, -1),blurRadius: defaultPadding/4),
+                    BoxShadow(color: Colors.red,offset: Offset(0, 1),blurRadius: defaultPadding/4),
+                  ]
+              ),
+              child: Row(
+                children: [
+                  Text(
+                    "Download CV",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontFamily: 'Open Sans',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Text("  "),
+                  Icon(Icons.download)
+                ],
+              ),
+            ),
           ),
           const SizedBox(width: 15),
         ],

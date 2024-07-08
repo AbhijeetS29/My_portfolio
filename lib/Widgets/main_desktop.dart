@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/Decoration/social_media_list.dart';
+import 'package:my_portfolio/IntroTexts/SubTexts.dart';
+import 'package:my_portfolio/IntroTexts/description_text.dart';
+import 'package:my_portfolio/IntroTexts/headline_text.dart';
 
-import '../Constants/colors.dart';
+import '../Decoration/animated_texts_componenets.dart';
 
 class MainDesktop extends StatelessWidget {
   const MainDesktop({super.key});
@@ -12,82 +16,37 @@ class MainDesktop extends StatelessWidget {
     final screenWidth = screenSize.width;
 
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(1.0),
       child: Container(
         margin: const EdgeInsets.symmetric(
           horizontal: 20.0,
         ),
-        height: screenHeight / 1.3,
+        height: screenHeight / 1.4,
         constraints: const BoxConstraints(
           minHeight: 350.0,
         ),
 
-
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // intro message
-                Align(
-                 alignment: Alignment.topLeft
-                  ,child:  Text(
-                    " Hey! I'm ",
-                    style: TextStyle(
-                      fontSize: 25,
-                      height: 1.5,
-                      fontWeight: FontWeight.w400,
-                      color: CustomColor.maincolor4,
-                    ),
-                  ),
-                ),Text(
-                  "ABHIJEET SINGH",
-                  style: TextStyle(
-                    fontSize: 25,
-                    height: 1.5,
-                    fontWeight: FontWeight.w800,
-                    color: CustomColor.maincolor4,
-                  ),
-                ),Text(
-                  "An Application Developer",
-                  style: TextStyle(
-                    fontSize: 25,
-                    height: 1.5,
-                    fontWeight: FontWeight.w400,
-                    color: CustomColor.maincolor4,
-                  ),
-                ),
-                const SizedBox(height: 15),
-                // contact btn
-                SizedBox(
-                  width: 250.0,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: CustomColor.maincolor4, // Button color
-                      onPrimary: CustomColor.maincolor3, // Text color
-                      padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      elevation: 5, // Shadow depth
-                    ),
-                    child: const Text("Curriculum vitae",style: TextStyle(
-                      fontSize: 18,
-                      height: 1.2,
-                      fontWeight: FontWeight.bold,
-                      color: CustomColor.whitePrimary,
-                    ),),
-                  ),
-                )
-              ],
+            Padding(
+              padding: const EdgeInsets.only(left: 50),
+              child: const SocialMediaIconList(),
             ),
-            // avatar img
-            Image.asset(
-              "assets/images/mainpic1.png",
-              width: screenWidth / 3,
-            ),
+            SizedBox(width: 50,),
+
+               Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  MyPortfolioText(start: 0, end: 50),
+                  SubTitles(start: 0, end: 40),
+                  AnimatedDescriptionText(start: 0, end: 15,)
+                ],
+              ),
+            SizedBox(width: 50,),
+
+            AnimatedImageContainer()
           ],
         ),
       ),

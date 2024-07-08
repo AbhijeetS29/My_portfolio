@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../Constants/colors.dart';
-import '../../responsive.dart';
+import '../Constants/colors.dart';
+import '../responsive.dart';
 
 
 class AnimatedImageContainer extends StatefulWidget {
@@ -20,7 +20,7 @@ class AnimatedImageContainerState extends State<AnimatedImageContainer>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: 800),
     )..repeat(reverse: true); // Repeat the animation loop
   }
   @override
@@ -35,7 +35,7 @@ class AnimatedImageContainerState extends State<AnimatedImageContainer>
       builder: (context, child) {
         final value = _controller.value;
         return Transform.translate(
-          offset: Offset(0, 2 * value), // Move the container up and down
+          offset: Offset(0, 3 * value), // Move the container up and down
           child: Container(
             height: widget.height!,
             width: widget.width!,
@@ -66,7 +66,7 @@ class AnimatedImageContainerState extends State<AnimatedImageContainer>
                 borderRadius: BorderRadius.circular(30),
               ),
               child: Image.asset(
-                'assets/images/image.png',
+                'assets/images/main.png',
                 height: Responsive.isLargeMobile(context)
                     ? MediaQuery.sizeOf(context).width * 0.2
                     : Responsive.isTablet(context)

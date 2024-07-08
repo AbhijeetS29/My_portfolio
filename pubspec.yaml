@@ -36,6 +36,7 @@ dependencies:
   video_player:
   font_awesome_flutter:
   flutter_svg:
+  get:
 
 
 
@@ -69,6 +70,7 @@ flutter:
   assets:
     - assets/images/
     - assets/videos/
+    - assets/icons/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

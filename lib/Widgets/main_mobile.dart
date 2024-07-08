@@ -1,113 +1,84 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/Decoration/animated_texts_componenets.dart';
+import 'package:my_portfolio/IntroTexts/SubTexts.dart';
+import 'package:my_portfolio/IntroTexts/description_text.dart';
+import 'package:my_portfolio/IntroTexts/headline_text.dart';
 
 import '../Constants/colors.dart';
-
-
+import '../Constants/nav_items.dart'; // Assuming you have defined navTitles in this file
+import '../Decoration/AnimatedImage.dart';
 
 class MainMobile extends StatelessWidget {
-  const MainMobile({super.key});
+  const MainMobile({super.key, required this.onNavMenuTap});
+  final Function(int) onNavMenuTap;
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
-    final screenHeight = screenSize.height;
-    final screenWidth = screenSize.width;
-
     return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        margin: const EdgeInsets.symmetric(
-          horizontal: 40.0,
-          vertical: 30.0,
-        ),
+      padding: const EdgeInsets.only(top: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // Navigation Buttons
 
-        width: double.maxFinite,
-        constraints: const BoxConstraints(
-          minHeight: 560.0,
-        ),
-        decoration: BoxDecoration(
-          // color: Color(0x1affffff),
-          borderRadius: BorderRadius.circular(20)
-        ),
-
-
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // avatar img
-            ShaderMask(
-              shaderCallback: (bounds) {
-                return LinearGradient(colors: [
-                  CustomColor.scaffoldBg.withOpacity(0.2),
-                  CustomColor.scaffoldBg.withOpacity(0.2),
-                ]).createShader(bounds);
-              },
-              blendMode: BlendMode.srcATop,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Center(
-                  child: Image.asset(
-                    "assets/images/mainpic1.png",
-                    width: screenWidth/3,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                for (int i = 0; i < navTitles.length; i++)
+                Padding(
+                  padding: EdgeInsets.only(right: 20),
+                  child: TweenAnimationBuilder(
+                    tween: Tween<double>(begin: 0, end: 1),
+                    duration: Duration(milliseconds: 900 + (i * 200)),
+                    builder: (context, double value, child) {
+                      return Opacity(
+                        opacity: value,
+                        child: Transform.translate(
+                          offset: Offset(0, (1 - value) * -20),
+                          child: TextButton(
+                            onPressed: () {
+                              onNavMenuTap(i);
+                            },
+                            child: Text(
+                              navTitles[i],
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: 'Open Sans',
+                                fontWeight: FontWeight.w500,
+                                color: CustomColor.whitePrimary,
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 ),
-              ),
+              ],
             ),
-            const SizedBox(height: 30),
-            // intro message
-             Text(
-              "Hey! I'm",
-              style: TextStyle(
-                fontSize: 20,
-                height: 1.5,
-                fontWeight: FontWeight.w400,
-                color: CustomColor.maincolor4,
-              ),
-            ),Text(
-              "ABHIJEET SINGH",
-              style: TextStyle(
-                fontSize: 24,
-                height: 1.5,
-                fontWeight: FontWeight.bold,
-                color: CustomColor.maincolor4,
-              ),
-            ),
-            const SizedBox(height: 15),
-            // contact btn
-            SizedBox(
-              width: 190.0,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  primary: CustomColor.maincolor4, // Button color
-                  onPrimary: CustomColor.maincolor3, // Text color
-                  padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  elevation: 5, // Shadow depth
-                ),
-                child: const Text("CV",style: TextStyle(
-                  fontSize: 18,
-                  height: 1.2,
-                  fontWeight: FontWeight.bold,
-                  color: CustomColor.whitePrimary,
-                ),),
-              ),
-              
-            ),
+          SizedBox(height: 40,),
 
-            SizedBox(height: 23,),
-            Text("I am an experienced application and web developer with expertise in Flutter and Kotlin. I excel in creating user-friendly designs and have a strong track record in delivering high-quality projects."
-                ,style: TextStyle(
-                  fontSize: 18,
-                  height: 1.2,
-                  fontWeight: FontWeight.w500,
-                  color: CustomColor.maincolor4,
-                ))
-          ],
-        ),
+          // Centered Animated Image
+          Center(
+            child: AnimatedImageContainerP(),
+          ),
+
+          // Text Descriptions
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 30.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                MyPortfolioText(start: 0, end: 30),
+                SizedBox(height: 5),
+                SubTitles(start: 0, end: 20),
+                SizedBox(height: 5),
+                AnimatedDescriptionText(start: 0, end: 10),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
