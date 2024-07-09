@@ -1,19 +1,21 @@
-import 'package:flutter/material.dart';
-import 'package:my_portfolio/Decoration/style.dart';
-import '../Constants/colors.dart';
-import '../Constants/skill_items.dart';
+import'package:flutter/material.dart';
 
-class AboutHeading extends StatelessWidget {
-  const AboutHeading({super.key, required this.start, required this.end});
+class SkillsHeading extends StatefulWidget {
+  const SkillsHeading({super.key, required this.start, required this.end});
   final double start;
   final double end;
 
+  @override
+  State<SkillsHeading> createState() => _SkillsHeadingState();
+}
+
+class _SkillsHeadingState extends State<SkillsHeading> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenHeight = screenSize.height;
     return TweenAnimationBuilder<double>(
-      tween: Tween<double>(begin: 0, end: end),
+      tween: Tween<double>(begin: 0, end: widget.end),
       duration: const Duration(milliseconds: 900),
       builder: (context, value, child) {
         return RichText(
@@ -25,31 +27,7 @@ class AboutHeading extends StatelessWidget {
               fontSize: value,
             ),
             children: [
-              WidgetSpan(
-                child: TweenAnimationBuilder<double>(
-                  tween: Tween<double>(begin: 0, end: value),
-                  duration: const Duration(milliseconds: 200),
-                  builder: (context, tweenValue, child) {
-                    return  Text(
-                      'About',
-                      style: TextStyle(
-                        fontSize: tweenValue,
-                        fontFamily: 'Open Sans',
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    );
-                  },
-                ),
-              ),
-              TextSpan(
-                text: ' ',
-                style: TextStyle(
-                  fontSize: value,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
+
               WidgetSpan(
                 child: TweenAnimationBuilder<double>(
                   tween: Tween<double>(begin: 0, end: value),
@@ -64,7 +42,7 @@ class AboutHeading extends StatelessWidget {
                         ).createShader(bounds);
                       },
                       child: Text(
-                        'ME',
+                        'Skills',
                         style: TextStyle(
                           fontFamily: 'Open Sans',
                           fontSize: tweenValue,

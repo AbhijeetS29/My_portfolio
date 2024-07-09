@@ -1,15 +1,20 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/Constants/services_utils.dart';
-import '../Constants/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'dart:math' as math;
 
-class AboutusMobile extends StatefulWidget {
-  const AboutusMobile({Key? key}) : super(key: key);
+import '../Constants/colors.dart';
+import '../Constants/project_utils.dart';
+import '../Decoration/style.dart';
+
+class ProjectMobile extends StatefulWidget {
+  const ProjectMobile({Key? key}) : super(key: key);
 
   @override
-  State<AboutusMobile> createState() => _AboutusMobileState();
+  State<ProjectMobile> createState() => _ProjectMobileState();
 }
 
-class _AboutusMobileState extends State<AboutusMobile> {
+class _ProjectMobileState extends State<ProjectMobile> {
   int? selectedIndex;
 
   @override
@@ -19,7 +24,7 @@ class _AboutusMobileState extends State<AboutusMobile> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          for (int i = 0; i < aboutProjectUtils.length; i++)
+          for (int i = 0; i < workProjectUtils.length; i++)
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
               child: AboutMeCard(
@@ -73,14 +78,17 @@ class _AboutMeCardState extends State<AboutMeCard> {
       child: GestureDetector(
         onTap: widget.onCardTap,
         child: AnimatedContainer(
-          duration: Duration(milliseconds: 300),
-          height: 200,
+          duration: Duration(milliseconds: 500),
+
           width: double.infinity,
-          transform: widget.isSelected
-              ? (Matrix4.identity()
-            ..rotateZ(-0.05)
-            ..translate(-20.0, 10.0))
-              : Matrix4.identity(),
+          transform: Matrix4.identity()
+            ..translate(
+              // Offset based on selection
+              widget.isSelected ? -20.0 : 0.0,
+              widget.isSelected ? 10.0 : 0.0,
+            )
+            ..rotateZ(widget.isSelected ? -0.05 : 0.0),
+          // Rotate if selected
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             gradient: const LinearGradient(
@@ -113,21 +121,13 @@ class _AboutMeCardState extends State<AboutMeCard> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Transform.translate(
-                    offset: widget.isSelected ? Offset(-5, 5) : Offset.zero,
-                    child: Icon(
-                      aboutProjectUtils[widget.index].image,
-                      size: 40,
-                      color: Colors.white,
-                    ),
-                  ),
                   SizedBox(height: 15),
-                  Transform.translate(
-                    offset: widget.isSelected ? Offset(-5, 5) : Offset.zero,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      aboutProjectUtils[widget.index].title,
+                      workProjectUtils[widget.index].title,
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 24,
                         fontFamily: 'Open Sans',
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -136,18 +136,49 @@ class _AboutMeCardState extends State<AboutMeCard> {
                     ),
                   ),
                   SizedBox(height: 10),
-                  Transform.translate(
-                    offset: widget.isSelected ? Offset(-5, 5) : Offset.zero,
-                    child: Text(
-                      aboutProjectUtils[widget.index].subtitle,
-                      style: TextStyle(
-                        fontFamily: 'Open Sans',
-                        fontSize: 14,
-                        color: Colors.white,
-                      ),
-                      textAlign: TextAlign.center,
+                  Text(
+                    workProjectUtils[widget.index].subtitle,
+                    style: TextStyle(
+                      fontFamily: 'Open Sans',
+                      fontSize: 14,
+                      color: Colors.white,
                     ),
+                    textAlign: TextAlign.center,
                   ),
+                  SizedBox(height: 10),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(
+                          workProjectUtils[widget.index].language,
+                          width: 40,
+                          height: 40,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: TextButton(
+                            onPressed: () async {
+                              var url = workProjectUtils[widget.index].webLink.toString();
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                throw 'Could not launch $url';
+                              }
+                            },
+                            child: Text(
+                              workProjectUtils[widget.index].view,
+                              style: TextStyle(
+                                  fontFamily: 'Open Sans',
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w500,
+                                  color: CupertinoColors.activeOrange),
+                            )),
+                      )
+                    ],
+                  )
                 ],
               ),
             ),

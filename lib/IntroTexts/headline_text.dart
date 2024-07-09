@@ -28,6 +28,7 @@ class MyPortfolioText extends StatelessWidget {
                     return  Text(
                       "I'm ",
                       style: TextStyle(
+                        fontFamily: 'Open Sans',
                         fontSize: tweenValue,
                         color: Colors.white,
                         fontWeight: FontWeight.w900,

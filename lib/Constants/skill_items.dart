@@ -28,7 +28,7 @@ const List<Map> skillItems = [
   },
   {
     "img": "assets/images/android.png",
-    "title": "Android Kotlin",
+    "title": "Android\nKotlin",
   },
   {
     "img": "assets/images/python.png",
@@ -69,7 +69,7 @@ const List<Map> skillItems1 = [
   },
   {
     "img": "assets/images/Figma.png",
-    "title": "figma",
+    "title": "Figma",
   },
 ];
 const List<Map> skillItemsM2 = [

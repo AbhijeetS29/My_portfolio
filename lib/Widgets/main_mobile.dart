@@ -70,9 +70,9 @@ class MainMobile extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                MyPortfolioText(start: 0, end: 30),
+                MyPortfolioText(start: 0, end: 40),
                 SizedBox(height: 5),
-                SubTitles(start: 0, end: 20),
+                SubTitles(start: 0, end: 30),
                 SizedBox(height: 5),
                 AnimatedDescriptionText(start: 0, end: 10),
               ],

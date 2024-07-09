@@ -39,9 +39,9 @@ class MainDesktop extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  MyPortfolioText(start: 0, end: 50),
-                  SubTitles(start: 0, end: 40),
-                  AnimatedDescriptionText(start: 0, end: 15,)
+                  MyPortfolioText(start: 0, end: 45),
+                  SubTitles(start: 0, end: 37),
+                  AnimatedDescriptionText(start: 0, end: 13,)
                 ],
               ),
             SizedBox(width: 50,),

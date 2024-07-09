@@ -3,9 +3,9 @@ import 'package:my_portfolio/AboutSection/AboutUsHeading.dart';
 import 'package:my_portfolio/Constants/colors.dart';
 import 'package:my_portfolio/Constants/nav_items.dart';
 import 'package:my_portfolio/Constants/size.dart';
-import 'package:my_portfolio/Widgets/Project_Mid_RAnge.dart';
-import 'package:my_portfolio/Widgets/Projects_desktop.dart';
-import 'package:my_portfolio/Widgets/Projects_mobile.dart';
+import 'package:my_portfolio/project_section/Project_Mid_RAnge.dart';
+import 'package:my_portfolio/project_section/Projects_desktop.dart';
+import 'package:my_portfolio/project_section/Projects_mobile.dart';
 import 'package:my_portfolio/AboutSection/AboutHeading.dart';
 import 'package:my_portfolio/Widgets/divider_desktop.dart';
 import 'package:my_portfolio/Widgets/get_in_touch.dart';
@@ -16,10 +16,13 @@ import '../AboutSection/AboutMobile.dart';
 import '../AboutSection/AboutUsDetailing.dart';
 import '../Constants/sns_links.dart';
 import '../Decoration/style.dart';
+import '../Skills Section/SkillsDesktop.dart';
+import '../Skills Section/SkillsHeading.dart';
 import '../Skills Section/SkillsMobile.dart';
 import '../Widgets/drawerM.dart';
 import '../Widgets/main_desktop.dart';
-import '../Widgets/main_mobile.dart'; // Ensure correct casing here
+import '../Widgets/main_mobile.dart';
+import '../project_section/Project_heading.dart'; // Ensure correct casing here
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -117,32 +120,39 @@ class _HomePageState extends State<HomePage> {
 
                           // Desktop Layout: Skills Panel and About Us
                           if (constraints.maxWidth >= kMedDesktopWidth)
-                            Column(
+                            const Column(
                               children: [
-                                const AboutHeading(start: 0, end: 40),
-                                // Adjust start and end parameters as needed
-                                const SizedBox(height: 20),
-                                // Adjust spacing between sections
-                                 const AboutMe(),
+                                AboutHeading( start: 0, end: 40),
+                                SizedBox(height: 20),
+                                AboutMe(),
+                                SizedBox(height: 20),
+                                SkillsHeading(start: 0, end: 40,),
+                                SkillsDesktop()
+
                                 // Adjust start and end parameters as needed
                               ],
                             ),
 
                           // Mobile Layout: Skills Mobile
                           if (constraints.maxWidth < kMedDesktopWidth)
-                            Column(
+                            const Column(
                               children: [
-                                const AboutHeading(start: 0, end: 40),
+                                AboutHeading(start: 0, end: 40),
                                 // Adjust start and end parameters as needed
-                                const SizedBox(height: 20),
+                                SizedBox(height: 20),
                                 // Adjust spacing between sections
-                                const AboutusMobile(),
+                                AboutusMobile(),
+                                SizedBox(height: 20),
+                                SkillsHeading(start: 0, end: 40,),
+                                SkillsMobile()
                                 // Adjust start and end parameters as needed
                               ],
                             ),
                         ],
                       ),
                     ),
+                    const SizedBox(height: 20),
+                    DividerDesktop(),
 
                     const SizedBox(height: 20),
 
@@ -150,11 +160,12 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       key: navbarKeys[2],
                       width: screenWidth,
-                      padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                      padding:  EdgeInsets.fromLTRB(25, 20, 25, 60),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           // title
+                          PorjectHeading(start: 0, end: 40,),
                           const SizedBox(height: 50),
                           // platforms and skills
                           if (constraints.maxWidth >= kMedDesktopWidth2)
