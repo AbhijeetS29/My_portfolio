@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "313087643941",
-    "project_id": "mypersonalportfolio-f25e1",
-    "storage_bucket": "mypersonalportfolio-f25e1.appspot.com"
+    "project_number": "674743139704",
+    "project_id": "abhijeetsinghportfolio",
+    "storage_bucket": "abhijeetsinghportfolio.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:313087643941:android:289346d6226c153fc50acc",
+        "mobilesdk_app_id": "1:674743139704:android:077096fb522a124aa41c8d",
         "android_client_info": {
           "package_name": "com.example.my_portfolio"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD5NTeyGYxDk-WkeVByE1ZsXDYFbp6TaZM"
+          "current_key": "AIzaSyAVT6OWtDTxrvrKmw7XuZn2jjJQUfo14V4"
         }
       ],
       "services": {

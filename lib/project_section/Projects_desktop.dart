@@ -16,24 +16,24 @@ class _ProjectsDesktopState extends State<ProjectsDesktop> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           // Displaying projects in two rows
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
+
                       for (int i = 0; i < 3; i++)
                         Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 10),
+                          padding: const EdgeInsets.symmetric(vertical: 10),
                           child: AboutMeCard(index: i),
                         ),
                     ],
@@ -42,7 +42,7 @@ class _ProjectsDesktopState extends State<ProjectsDesktop> {
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -95,7 +95,8 @@ class _AboutMeCardState extends State<AboutMeCard> {
         });
       },
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
+        duration: Duration(milliseconds: 300),
+        height: 250,
         width: 300,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
@@ -105,13 +106,13 @@ class _AboutMeCardState extends State<AboutMeCard> {
           boxShadow: [
             BoxShadow(
               color: Colors.pink.withOpacity(0.3),
-              offset: const Offset(0, 5),
+              offset: Offset(0, 5),
               blurRadius: 15,
               spreadRadius: isHovered ? 10 : 2, // Change spread radius on hover
             ),
             BoxShadow(
               color: Colors.blue.withOpacity(0.3),
-              offset: const Offset(0, 5),
+              offset: Offset(0, 5),
               blurRadius: 15,
               spreadRadius: isHovered ? 10 : 2, // Change spread radius on hover
             ),
@@ -129,29 +130,26 @@ class _AboutMeCardState extends State<AboutMeCard> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(height: 15),
+                SizedBox(height: 15),
                 Text(
                   workProjectUtils[widget.index].title,
-                  style: const TextStyle(
-                    fontSize: 23,
+                  style: TextStyle(
+                    fontSize: 20,
                     fontFamily: 'Open Sans',
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    workProjectUtils[widget.index].subtitle,
-                    style: const TextStyle(
-                      fontSize: 14,
-                      fontFamily: 'Open Sans',
-                      color: Colors.white,
-                    ),
-                    textAlign: TextAlign.center,
+                SizedBox(height: 10),
+                Text(
+                  workProjectUtils[widget.index].subtitle,
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: 'Open Sans',
+                    color: Colors.white,
                   ),
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 10),
                 Row(

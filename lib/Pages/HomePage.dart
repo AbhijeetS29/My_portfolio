@@ -3,14 +3,16 @@ import 'package:my_portfolio/AboutSection/AboutUsHeading.dart';
 import 'package:my_portfolio/Constants/colors.dart';
 import 'package:my_portfolio/Constants/nav_items.dart';
 import 'package:my_portfolio/Constants/size.dart';
-<<<<<<< HEAD
+import 'package:my_portfolio/Skills%20Section/SkillsDesktop.dart';
+import 'package:my_portfolio/Skills%20Section/SkillsHeading.dart';
+import 'package:my_portfolio/Skills%20Section/SkillsMobile.dart';
+
 import 'package:my_portfolio/project_section/Projects_desktop.dart';
 import 'package:my_portfolio/project_section/Projects_mobile.dart';
-=======
-import 'package:my_portfolio/Widgets/Project_Mid_RAnge.dart';
-import 'package:my_portfolio/Widgets/Projects_desktop.dart';
-import 'package:my_portfolio/Widgets/Projects_mobile.dart';
->>>>>>> parent of 198c43e (almost done)
+
+
+
+
 import 'package:my_portfolio/AboutSection/AboutHeading.dart';
 import 'package:my_portfolio/Widgets/divider_desktop.dart';
 import 'package:my_portfolio/Widgets/get_in_touch.dart';
@@ -19,16 +21,11 @@ import 'package:my_portfolio/Widgets/header_mobile.dart';
 import 'dart:js' as js;
 import '../AboutSection/AboutMobile.dart';
 import '../AboutSection/AboutUsDetailing.dart';
-<<<<<<< HEAD
-import '../Skills Section/SkillsDesktop.dart';
-import '../Skills Section/SkillsHeading.dart';
-=======
-import '../Constants/sns_links.dart';
-import '../Decoration/style.dart';
->>>>>>> parent of 198c43e (almost done)
-import '../Skills Section/SkillsMobile.dart';
+
+
 import '../Widgets/main_desktop.dart';
-import '../Widgets/main_mobile.dart'; // Ensure correct casing here
+import '../Widgets/main_mobile.dart';
+import '../project_section/Project_heading.dart'; // Ensure correct casing here
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -79,7 +76,7 @@ class _HomePageState extends State<HomePage> {
               child: Container(
                 decoration: BoxDecoration(
                     color: bgColor, borderRadius: BorderRadius.circular(15)),
-                child: Column(
+                child: ListView(
                   children: [
                     SizedBox(key: navbarKeys.first),
 
@@ -127,30 +124,33 @@ class _HomePageState extends State<HomePage> {
                                 const SizedBox(height: 20),
                                 // Adjust spacing between sections
                                  const AboutMe(),
+                                const SkillsHeading(start: 0, end: 30),
+                                const SkillsDesktop()
                                 // Adjust start and end parameters as needed
                               ],
                             ),
 
                           // Mobile Layout: Skills Mobile
                           if (constraints.maxWidth < kMedDesktopWidth)
-                            Column(
+                             Column(
                               children: [
-                                const AboutHeading(start: 0, end: 40),
+                                AboutHeading(start: 0, end: 40),
                                 // Adjust start and end parameters as needed
-                                const SizedBox(height: 20),
+                                SizedBox(height: 20),
                                 // Adjust spacing between sections
-                                const AboutusMobile(),
+                                AboutusMobile(),
+                                SkillsHeading(start: 0, end: 30),
+                                SkillsMobile()
                                 // Adjust start and end parameters as needed
                               ],
                             ),
                         ],
                       ),
                     ),
-<<<<<<< HEAD
+
                     const SizedBox(height: 20),
                     const DividerDesktop(),
-=======
->>>>>>> parent of 198c43e (almost done)
+
 
                     const SizedBox(height: 20),
 
@@ -158,19 +158,17 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       key: navbarKeys[2],
                       width: screenWidth,
-<<<<<<< HEAD
+
                       padding:  const EdgeInsets.fromLTRB(25, 20, 25, 60),
-=======
-                      padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
->>>>>>> parent of 198c43e (almost done)
+
+
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           // title
-<<<<<<< HEAD
+
                           const PorjectHeading(start: 0, end: 40,),
-=======
->>>>>>> parent of 198c43e (almost done)
+
                           const SizedBox(height: 50),
                           // platforms and skills
                           if (constraints.maxWidth >= kMedDesktopWidth2)

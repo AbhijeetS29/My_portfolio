@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "mypersonalportfolio-f25e1"
-  }
+    "default": "abhijeetsinghportfolio",
+    "web": "abhijeetsinghportfolio"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

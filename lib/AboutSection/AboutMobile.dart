@@ -138,18 +138,15 @@ class _AboutMeCardState extends State<AboutMeCard> {
                     offset: widget.isSelected ? const Offset(-5, 5) : Offset.zero,
                     child: Text(
                       aboutProjectUtils[widget.index].subtitle,
-<<<<<<< HEAD
+
                       style: const TextStyle(
                         fontFamily: 'Open Sans',
-=======
-                      style: TextStyle(
->>>>>>> parent of 198c43e (almost done)
+
                         fontSize: 14,
                         color: Colors.white,
-                      ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
+      )
                 ],
               ),
             ),
