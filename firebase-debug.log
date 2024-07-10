@@ -1,0 +1,45 @@
+[debug] [2024-07-10T13:21:29.930Z] ----------------------------------------------------------------------
+[debug] [2024-07-10T13:21:29.935Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ABHIJEET SINGH\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-07-10T13:21:29.935Z] CLI Version:   13.13.1
+[debug] [2024-07-10T13:21:29.936Z] Platform:      win32
+[debug] [2024-07-10T13:21:29.936Z] Node Version:  v20.10.0
+[debug] [2024-07-10T13:21:29.936Z] Time:          Wed Jul 10 2024 18:51:29 GMT+0530 (India Standard Time)
+[debug] [2024-07-10T13:21:29.936Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-07-10T13:21:30.025Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"flutter"}
+[debug] [2024-07-10T13:21:30.030Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-07-10T13:21:30.031Z] > authorizing via signed-in user (s2.abhijeet@gmail.com)
+[debug] [2024-07-10T13:21:30.032Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"flutter"}
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Flutter\flutter Projects\my_portfolio
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-07-10T13:21:36.619Z] Using project from CLI flag: abhijeetsinghportfolio
+[debug] [2024-07-10T13:21:36.622Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/abhijeetsinghportfolio [none]
+[debug] [2024-07-10T13:21:37.151Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/abhijeetsinghportfolio 401
+[debug] [2024-07-10T13:21:37.151Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/abhijeetsinghportfolio {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2024-07-10T13:21:37.152Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2024-07-10T13:21:37.522Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (C:\Users\ABHIJEET SINGH\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\ABHIJEET SINGH\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:305:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project abhijeetsinghportfolio. Please make sure the project exists and your account has permission to access it.

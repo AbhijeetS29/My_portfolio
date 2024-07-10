@@ -123,29 +123,35 @@ class _AboutMeCardState extends State<AboutMeCard> {
                   const SizedBox(height: 15),
                   Transform.translate(
                     offset: widget.isSelected ? const Offset(-5, 5) : Offset.zero,
-                    child: Text(
-                      aboutProjectUtils[widget.index].title,
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        aboutProjectUtils[widget.index].title,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
                     ),
                   ),
                   const SizedBox(height: 10),
                   Transform.translate(
                     offset: widget.isSelected ? const Offset(-5, 5) : Offset.zero,
-                    child: Text(
-                      aboutProjectUtils[widget.index].subtitle,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        aboutProjectUtils[widget.index].subtitle,
 
-                      style: const TextStyle(
-                        fontFamily: 'Open Sans',
+                        style: const TextStyle(
+                          fontFamily: 'Open Sans',
 
-                        fontSize: 14,
-                        color: Colors.white,
+                          fontSize: 14,
+                          color: Colors.white,
+                      ),
+                                        ),
                     ),
-                  ),
       )
                 ],
               ),

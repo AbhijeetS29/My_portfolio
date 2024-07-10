@@ -61,9 +61,8 @@ class AnimatedImageContainerState extends State<AnimatedImageContainer>
             ),
             child: Container(
               alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(30),
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
               ),
               child: Image.asset(
                 'assets/images/main.png',
