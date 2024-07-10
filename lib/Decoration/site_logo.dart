@@ -15,13 +15,13 @@ class SiteLogo extends StatelessWidget {
       onTap: onTap,
       child: ShaderMask(
         shaderCallback: (Rect bounds) {
-          return LinearGradient(
+          return const LinearGradient(
             colors: <Color>[Colors.pink, Colors.blue],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ).createShader(bounds);
         },
-        child: Text(
+        child: const Text(
           "A.S",
           style: TextStyle(
             fontSize: 32,

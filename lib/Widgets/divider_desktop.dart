@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/Decoration/style.dart';
 
 class DividerDesktop extends StatefulWidget {
   const DividerDesktop({super.key});

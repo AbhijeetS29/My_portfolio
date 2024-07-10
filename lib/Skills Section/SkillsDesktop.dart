@@ -32,7 +32,7 @@ class _SkillsDesktopState extends State<SkillsDesktop> {
 
   Widget buildSkillItem(Map skillItem, bool isHovered) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 800),
+      duration: const Duration(milliseconds: 800),
       width: isHovered ? 200 : 90,
       height: 80,
       decoration: BoxDecoration(
@@ -43,13 +43,13 @@ class _SkillsDesktopState extends State<SkillsDesktop> {
         boxShadow: [
           BoxShadow(
             color: Colors.pink.withOpacity(0.3),
-            offset: Offset(0, 5),
+            offset: const Offset(0, 5),
             blurRadius: 15,
             spreadRadius: 5,
           ),
           BoxShadow(
             color: Colors.blue.withOpacity(0.3),
-            offset: Offset(0, 5),
+            offset: const Offset(0, 5),
             blurRadius: 15,
             spreadRadius: 5,
           ),
@@ -76,7 +76,7 @@ class _SkillsDesktopState extends State<SkillsDesktop> {
                     padding: const EdgeInsets.only(left: 10.0),
                     child: Text(
                       skillItem['title'] as String,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: 'Open Sans',
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -109,7 +109,7 @@ class _SkillsDesktopState extends State<SkillsDesktop> {
                 ),
             ],
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:my_portfolio/Decoration/style.dart';
+import "package:flutter/material.dart";
 import '../Constants/colors.dart';
 import '../Constants/skill_items.dart';
 
@@ -57,7 +56,7 @@ class AboutHeading extends StatelessWidget {
                   builder: (context, tweenValue, child) {
                     return ShaderMask(
                       shaderCallback: (bounds) {
-                        return LinearGradient(
+                        return const LinearGradient(
                           colors: <Color>[Colors.pinkAccent, Colors.blueAccent],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,

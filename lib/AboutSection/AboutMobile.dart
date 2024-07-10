@@ -15,7 +15,7 @@ class _AboutusMobileState extends State<AboutusMobile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -73,7 +73,7 @@ class _AboutMeCardState extends State<AboutMeCard> {
       child: GestureDetector(
         onTap: widget.onCardTap,
         child: AnimatedContainer(
-          duration: Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 300),
           height: 200,
           width: double.infinity,
           transform: widget.isSelected
@@ -89,13 +89,13 @@ class _AboutMeCardState extends State<AboutMeCard> {
             boxShadow: [
               BoxShadow(
                 color: Colors.pink.withOpacity(0.3),
-                offset: Offset(0, 5),
+                offset: const Offset(0, 5),
                 blurRadius: 15,
                 spreadRadius: isHovered ? 10 : 2,
               ),
               BoxShadow(
                 color: Colors.blue.withOpacity(0.3),
-                offset: Offset(0, 5),
+                offset: const Offset(0, 5),
                 blurRadius: 15,
                 spreadRadius: isHovered ? 10 : 2,
               ),
@@ -114,19 +114,19 @@ class _AboutMeCardState extends State<AboutMeCard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Transform.translate(
-                    offset: widget.isSelected ? Offset(-5, 5) : Offset.zero,
+                    offset: widget.isSelected ? const Offset(-5, 5) : Offset.zero,
                     child: Icon(
                       aboutProjectUtils[widget.index].image,
                       size: 40,
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Transform.translate(
-                    offset: widget.isSelected ? Offset(-5, 5) : Offset.zero,
+                    offset: widget.isSelected ? const Offset(-5, 5) : Offset.zero,
                     child: Text(
                       aboutProjectUtils[widget.index].title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         fontFamily: 'Open Sans',
                         fontWeight: FontWeight.bold,
@@ -135,12 +135,12 @@ class _AboutMeCardState extends State<AboutMeCard> {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Transform.translate(
-                    offset: widget.isSelected ? Offset(-5, 5) : Offset.zero,
+                    offset: widget.isSelected ? const Offset(-5, 5) : Offset.zero,
                     child: Text(
                       aboutProjectUtils[widget.index].subtitle,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontFamily: 'Open Sans',
                         fontSize: 14,
                         color: Colors.white,

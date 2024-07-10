@@ -16,7 +16,7 @@ class AnimatedDescriptionText extends StatelessWidget {
       builder: (context, value, child) {
         return Text(
           'I am an experienced application and web developer with expertise\nin Flutter and Kotlin.I also excel in creating user-friendly designs',
-
+maxLines: 2,
 
           overflow: TextOverflow.ellipsis,
           style: TextStyle(color: Colors.grey, wordSpacing: 2, fontSize: value,fontFamily: 'Open Sans'),

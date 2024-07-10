@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/Constants/colors.dart';
 import 'package:my_portfolio/Constants/project_utils.dart';
-import 'package:my_portfolio/Decoration/style.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -17,7 +16,7 @@ class _ProjectsDesktopState extends State<ProjectsDesktop> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -43,7 +42,7 @@ class _ProjectsDesktopState extends State<ProjectsDesktop> {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -96,7 +95,7 @@ class _AboutMeCardState extends State<AboutMeCard> {
         });
       },
       child: AnimatedContainer(
-        duration: Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: 300),
         width: 300,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
@@ -106,13 +105,13 @@ class _AboutMeCardState extends State<AboutMeCard> {
           boxShadow: [
             BoxShadow(
               color: Colors.pink.withOpacity(0.3),
-              offset: Offset(0, 5),
+              offset: const Offset(0, 5),
               blurRadius: 15,
               spreadRadius: isHovered ? 10 : 2, // Change spread radius on hover
             ),
             BoxShadow(
               color: Colors.blue.withOpacity(0.3),
-              offset: Offset(0, 5),
+              offset: const Offset(0, 5),
               blurRadius: 15,
               spreadRadius: isHovered ? 10 : 2, // Change spread radius on hover
             ),
@@ -130,10 +129,10 @@ class _AboutMeCardState extends State<AboutMeCard> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Text(
                   workProjectUtils[widget.index].title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 23,
                     fontFamily: 'Open Sans',
                     fontWeight: FontWeight.bold,
@@ -141,12 +140,12 @@ class _AboutMeCardState extends State<AboutMeCard> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     workProjectUtils[widget.index].subtitle,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       fontFamily: 'Open Sans',
                       color: Colors.white,
@@ -154,7 +153,7 @@ class _AboutMeCardState extends State<AboutMeCard> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -179,7 +178,7 @@ class _AboutMeCardState extends State<AboutMeCard> {
                           },
                           child: Text(
                             workProjectUtils[widget.index].view,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontFamily: 'Open Sans',
                                 fontSize: 17,
                                 fontWeight: FontWeight.w500,

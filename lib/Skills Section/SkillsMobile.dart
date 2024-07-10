@@ -28,10 +28,10 @@ class _SkillsMobileState extends State<SkillsMobile> {
     return GestureDetector(
       onTap: () => onTap(index),
       child: AnimatedContainer(
-        duration: Duration(milliseconds: 900),
+        duration: const Duration(milliseconds: 900),
         width: isTapped ? 140 : 70,
         height: 70,
-        margin: EdgeInsets.only(bottom: 20), // Add space between rows
+        margin: const EdgeInsets.only(bottom: 20), // Add space between rows
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(40),
           gradient: const LinearGradient(
@@ -40,13 +40,13 @@ class _SkillsMobileState extends State<SkillsMobile> {
           boxShadow: [
             BoxShadow(
               color: Colors.pink.withOpacity(0.3),
-              offset: Offset(0, 5),
+              offset: const Offset(0, 5),
               blurRadius: 15,
               spreadRadius: 5,
             ),
             BoxShadow(
               color: Colors.blue.withOpacity(0.3),
-              offset: Offset(0, 5),
+              offset: const Offset(0, 5),
               blurRadius: 15,
               spreadRadius: 5,
             ),
@@ -73,7 +73,7 @@ class _SkillsMobileState extends State<SkillsMobile> {
                       padding: const EdgeInsets.only(left: 10.0),
                       child: Text(
                         skillItem['title'] as String,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontFamily: 'Open Sans',
                           fontSize: 14,
                           fontWeight: FontWeight.bold,

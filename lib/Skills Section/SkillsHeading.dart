@@ -35,7 +35,7 @@ class _SkillsHeadingState extends State<SkillsHeading> {
                   builder: (context, tweenValue, child) {
                     return ShaderMask(
                       shaderCallback: (bounds) {
-                        return LinearGradient(
+                        return const LinearGradient(
                           colors: <Color>[Colors.pinkAccent, Colors.blueAccent],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,

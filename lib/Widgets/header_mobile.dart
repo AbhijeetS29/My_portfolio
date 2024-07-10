@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/Constants/colors.dart';
 
 import '../Decoration/site_logo.dart';
-import '../Decoration/style.dart';
-
 
 class HeaderMobile extends StatelessWidget {
   const HeaderMobile({
@@ -22,7 +20,7 @@ class HeaderMobile extends StatelessWidget {
 
       child: Row(
         children: [
-          SizedBox(width: 20,),
+          const SizedBox(width: 20,),
           SiteLogo(
             onTap: onLogoTap,
           ),
@@ -32,7 +30,7 @@ class HeaderMobile extends StatelessWidget {
 
             },
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(defaultPadding),
                   gradient: LinearGradient(colors: [
@@ -44,7 +42,7 @@ class HeaderMobile extends StatelessWidget {
                     BoxShadow(color: Colors.red,offset: Offset(0, 1),blurRadius: defaultPadding/4),
                   ]
               ),
-              child: Row(
+              child: const Row(
                 children: [
                   Text(
                     "Download CV",

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../Constants/colors.dart';
 import '../Constants/nav_items.dart';
 import '../Decoration/site_logo.dart';
-import '../Decoration/style.dart';
 
 class HeaderDesktop extends StatelessWidget {
   const HeaderDesktop({
@@ -26,12 +25,12 @@ class HeaderDesktop extends StatelessWidget {
             SiteLogo(
               onTap: () {},
             ),
-            Spacer(), // Adds space between SiteLogo and the navigation items
+            const Spacer(), // Adds space between SiteLogo and the navigation items
 
 
             for (int i = 0; i < navTitles.length; i++)
               Padding(
-                padding: EdgeInsets.only(right: 20),
+                padding: const EdgeInsets.only(right: 20),
                 child: TweenAnimationBuilder(
                   tween: Tween<double>(begin: 0, end: 1),
                   duration: Duration(milliseconds: 900 + (i * 200)),
@@ -46,7 +45,7 @@ class HeaderDesktop extends StatelessWidget {
                           },
                           child: Text(
                             navTitles[i],
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16,
                               fontFamily: 'Open Sans',
                               fontWeight: FontWeight.w500,
@@ -59,13 +58,13 @@ class HeaderDesktop extends StatelessWidget {
                   },
                 ),
               ),
-            Spacer(), // Adds space between the navigation items and the last container
+            const Spacer(), // Adds space between the navigation items and the last container
             GestureDetector(
               onTap: () {
 
               },
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+                padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(defaultPadding),
                     gradient: LinearGradient(colors: [
@@ -77,7 +76,7 @@ class HeaderDesktop extends StatelessWidget {
                       BoxShadow(color: Colors.red,offset: Offset(0, 1),blurRadius: defaultPadding/4),
                     ]
                 ),
-                child: Row(
+                child: const Row(
                   children: [
                     Text(
                       "Download CV",

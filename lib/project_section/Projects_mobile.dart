@@ -5,7 +5,7 @@ import 'dart:math' as math;
 
 import '../Constants/colors.dart';
 import '../Constants/project_utils.dart';
-import '../Decoration/style.dart';
+
 
 class ProjectMobile extends StatefulWidget {
   const ProjectMobile({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class _ProjectMobileState extends State<ProjectMobile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -78,7 +78,7 @@ class _AboutMeCardState extends State<AboutMeCard> {
       child: GestureDetector(
         onTap: widget.onCardTap,
         child: AnimatedContainer(
-          duration: Duration(milliseconds: 500),
+          duration: const Duration(milliseconds: 500),
 
           width: double.infinity,
           transform: Matrix4.identity()
@@ -97,13 +97,13 @@ class _AboutMeCardState extends State<AboutMeCard> {
             boxShadow: [
               BoxShadow(
                 color: Colors.pink.withOpacity(0.3),
-                offset: Offset(0, 5),
+                offset: const Offset(0, 5),
                 blurRadius: 15,
                 spreadRadius: isHovered ? 10 : 2,
               ),
               BoxShadow(
                 color: Colors.blue.withOpacity(0.3),
-                offset: Offset(0, 5),
+                offset: const Offset(0, 5),
                 blurRadius: 15,
                 spreadRadius: isHovered ? 10 : 2,
               ),
@@ -121,12 +121,12 @@ class _AboutMeCardState extends State<AboutMeCard> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       workProjectUtils[widget.index].title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 24,
                         fontFamily: 'Open Sans',
                         fontWeight: FontWeight.bold,
@@ -135,17 +135,17 @@ class _AboutMeCardState extends State<AboutMeCard> {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(
                     workProjectUtils[widget.index].subtitle,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontFamily: 'Open Sans',
                       fontSize: 14,
                       color: Colors.white,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -170,7 +170,7 @@ class _AboutMeCardState extends State<AboutMeCard> {
                             },
                             child: Text(
                               workProjectUtils[widget.index].view,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontFamily: 'Open Sans',
                                   fontSize: 17,
                                   fontWeight: FontWeight.w500,

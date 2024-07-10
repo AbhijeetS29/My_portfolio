@@ -27,7 +27,7 @@ class MainMobile extends StatelessWidget {
               children: [
                 for (int i = 0; i < navTitles.length; i++)
                 Padding(
-                  padding: EdgeInsets.only(right: 20),
+                  padding: const EdgeInsets.only(right: 20),
                   child: TweenAnimationBuilder(
                     tween: Tween<double>(begin: 0, end: 1),
                     duration: Duration(milliseconds: 900 + (i * 200)),
@@ -42,8 +42,8 @@ class MainMobile extends StatelessWidget {
                             },
                             child: Text(
                               navTitles[i],
-                              style: TextStyle(
-                                fontSize: 16,
+                              style: const TextStyle(
+                                fontSize: 10,
                                 fontFamily: 'Open Sans',
                                 fontWeight: FontWeight.w500,
                                 color: CustomColor.whitePrimary,
@@ -57,22 +57,22 @@ class MainMobile extends StatelessWidget {
                 ),
               ],
             ),
-          SizedBox(height: 40,),
+          const SizedBox(height: 40,),
 
           // Centered Animated Image
-          Center(
+          const Center(
             child: AnimatedImageContainerP(),
           ),
 
           // Text Descriptions
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 30.0),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 30.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                MyPortfolioText(start: 0, end: 40),
+                MyPortfolioText(start: 0, end: 30),
                 SizedBox(height: 5),
-                SubTitles(start: 0, end: 30),
+                SubTitles(start: 0, end: 20),
                 SizedBox(height: 5),
                 AnimatedDescriptionText(start: 0, end: 10),
               ],

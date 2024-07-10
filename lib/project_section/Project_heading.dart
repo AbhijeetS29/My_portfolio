@@ -13,7 +13,6 @@ class _PorjectHeadingState extends State<PorjectHeading> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    final screenHeight = screenSize.height;
     return TweenAnimationBuilder<double>(
       tween: Tween<double>(begin: 0, end: widget.end),
       duration: const Duration(milliseconds: 900),
@@ -59,7 +58,7 @@ class _PorjectHeadingState extends State<PorjectHeading> {
                   builder: (context, tweenValue, child) {
                     return ShaderMask(
                       shaderCallback: (bounds) {
-                        return LinearGradient(
+                        return const LinearGradient(
                           colors: <Color>[Colors.pinkAccent, Colors.blueAccent],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,

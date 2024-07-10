@@ -26,12 +26,12 @@ class MainDesktop extends StatelessWidget {
           minHeight: 350.0,
         ),
 
-        child: Row(
+        child: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child: const SocialMediaIconList(),
+              padding: EdgeInsets.only(left: 50),
+              child: SocialMediaIconList(),
             ),
             SizedBox(width: 50,),
 

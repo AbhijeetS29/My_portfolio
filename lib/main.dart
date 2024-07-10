@@ -1,9 +1,10 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/Pages/HomePage.dart';
 import 'package:my_portfolio/splash/splash_view.dart';
 
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Portfolio',
       theme: ThemeData.dark(),
-      home: const SplashView(),
+      home: const HomePage(),
     );
   }
 }

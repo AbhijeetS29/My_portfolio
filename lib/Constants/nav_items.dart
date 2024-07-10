@@ -8,9 +8,3 @@ List<String> navTitles = [
 
 ];
 
-List<IconData> navIcons = [
-  Icons.home,
-
-  Icons.design_services,
-  Icons.apps,
-];
