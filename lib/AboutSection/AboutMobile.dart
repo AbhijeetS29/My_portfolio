@@ -27,8 +27,7 @@ class _AboutusMobileState extends State<AboutusMobile> {
                 isSelected: selectedIndex == i,
                 onCardTap: () {
                   setState(() {
-                    // Toggle selection or reset to null if already selected
-                    selectedIndex = selectedIndex == i ? null : i;
+                    selectedIndex = i;
                   });
                 },
               ),
@@ -128,7 +127,6 @@ class _AboutMeCardState extends State<AboutMeCard> {
                       aboutProjectUtils[widget.index].title,
                       style: const TextStyle(
                         fontSize: 20,
-                        fontFamily: 'Open Sans',
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
@@ -140,8 +138,12 @@ class _AboutMeCardState extends State<AboutMeCard> {
                     offset: widget.isSelected ? const Offset(-5, 5) : Offset.zero,
                     child: Text(
                       aboutProjectUtils[widget.index].subtitle,
+<<<<<<< HEAD
                       style: const TextStyle(
                         fontFamily: 'Open Sans',
+=======
+                      style: TextStyle(
+>>>>>>> parent of 198c43e (almost done)
                         fontSize: 14,
                         color: Colors.white,
                       ),

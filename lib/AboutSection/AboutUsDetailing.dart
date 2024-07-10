@@ -106,7 +106,6 @@ class _AboutMeCardState extends State<AboutMeCard> {
                   aboutProjectUtils[widget.index].title,
                   style: const TextStyle(
                     fontSize: 20,
-                    fontFamily: 'Open Sans',
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
@@ -117,7 +116,6 @@ class _AboutMeCardState extends State<AboutMeCard> {
                   aboutProjectUtils[widget.index].subtitle,
                   style: const TextStyle(
                     fontSize: 14,
-                    fontFamily: 'Open Sans',
                     color: Colors.white,
                   ),
                   textAlign: TextAlign.center,

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:my_portfolio/IntroTexts/SubTexts.dart';
-import 'package:my_portfolio/IntroTexts/headline_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../Constants/colors.dart';
@@ -39,137 +36,113 @@ class _GetTouchState extends State<GetTouch> {
           minHeight: 350.0,
         ),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          gradient: const LinearGradient(
-            colors: [Colors.pink, Colors.blue],
-          ),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.pink.withOpacity(0.3),
-              offset: Offset(0, 5),
-              blurRadius: 15,
-              spreadRadius: 2, // Change spread radius on hover
-            ),
-            BoxShadow(
-              color: Colors.blue.withOpacity(0.3),
-              offset: Offset(0, 5),
-              blurRadius: 15,
-              spreadRadius:  2, // Change spread radius on hover
-            ),
-          ],
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(3.0),
-          child: Container(
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: bgColor,
-                borderRadius: BorderRadius.circular(30),
+            color: CustomColor.maincolor3.withOpacity(0.5),
+            borderRadius: BorderRadius.circular(20)),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 25),
+              child: Text(
+                "An Application Developer",
+                style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w900,
+                    color: CustomColor.maincolor4,
+                    fontFamily: 'Open Sans'),
               ),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 25),
-                  child: SubTitles(start: 0, end: 40,)
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
-                  child: Text(
-                    "I am an experienced application and web developer with expertise in Flutter and Kotlin. I excel in creating user-friendly designs and have a strong track record in delivering high-quality projects. In addition to my professional work, I contribute as a volunteer technical expert. I am driven by a passion for continuous learning and aim to achieve success in my career",
-                    style: TextStyle(
-                        fontFamily: 'Open Sans',
-                        fontWeight: FontWeight.w400,
-                        fontSize: 20,
-                        color: Colors.white),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 20, bottom: 30),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GestureDetector(
-                        onTap: () => _launchURL(emailUrl),
-                        child: Container(
-                          width: 60,
-                          height: 60,
-                          decoration: BoxDecoration(
-
-                              borderRadius: BorderRadius.circular(60)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Image.asset(
-                              'assets/images/email.png',
-                              width: 60,
-                              height: 60,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => _launchURL(githubUrl),
-                        child: Container(
-                          width: 60,
-                          height: 60,
-                          decoration: BoxDecoration(
-
-                              borderRadius: BorderRadius.circular(60)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: SvgPicture.asset(
-                              'assets/icons/github.svg',
-                              width: 60,
-                              height: 60,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => _launchURL(linkedinUrl),
-                        child: Container(
-                          width: 60,
-                          height: 60,
-                          decoration: BoxDecoration(
-
-                              borderRadius: BorderRadius.circular(60)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: SvgPicture.asset(
-                              'assets/icons/linkedin.svg',
-                              width: 60,
-                              height: 60,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => _launchURL(instagramUrl),
-                        child: Container(
-                          width: 60,
-                          height: 60,
-                          decoration: BoxDecoration(
-
-                              borderRadius: BorderRadius.circular(60)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Image.asset(
-                              'assets/images/instagram.png',
-                              width: 60,
-                              height: 60,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
             ),
-          ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
+              child: Text(
+                "I am an experienced application and web developer with expertise in Flutter and Kotlin. I excel in creating user-friendly designs and have a strong track record in delivering high-quality projects. In addition to my professional work, I contribute as a volunteer technical expert. I am driven by a passion for continuous learning and aim to achieve success in my career",
+                style: TextStyle(
+                    fontFamily: 'Open Sans',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 23,
+                    color: CustomColor.maincolor4),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20, bottom: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: () => _launchURL(emailUrl),
+                    child: Container(
+                      width: 60,
+                      height: 60,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(60)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(
+                          'assets/images/email.png',
+                          width: 60,
+                          height: 60,
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () => _launchURL(githubUrl),
+                    child: Container(
+                      width: 60,
+                      height: 60,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(60)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(
+                          'assets/images/github (1).png',
+                          width: 60,
+                          height: 60,
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () => _launchURL(linkedinUrl),
+                    child: Container(
+                      width: 60,
+                      height: 60,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(60)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(
+                          'assets/images/linkedin (1).png',
+                          width: 60,
+                          height: 60,
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () => _launchURL(instagramUrl),
+                    child: Container(
+                      width: 60,
+                      height: 60,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(60)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(
+                          'assets/images/instagram.png',
+                          width: 60,
+                          height: 60,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

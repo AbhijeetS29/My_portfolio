@@ -32,7 +32,6 @@ class SubTitles extends StatelessWidget {
                         'A',
                         style: TextStyle(
                           fontSize: tweenValue,
-                          fontFamily: 'Open Sans',
                           color: Colors.white,
                           fontWeight: FontWeight.w900,
                         ),
@@ -58,7 +57,6 @@ class SubTitles extends StatelessWidget {
                           fontSize: tweenValue,
                           color: Colors.white,
                           fontWeight: FontWeight.w900,
-                            fontFamily: 'Open Sans'
                         ),
                       );
 
@@ -92,7 +90,6 @@ class SubTitles extends StatelessWidget {
                           fontSize: tweenValue,
                           color: Colors.white,
                           fontWeight: FontWeight.w900,
-                            fontFamily: 'Open Sans'
                         ),
                       ),
                     );

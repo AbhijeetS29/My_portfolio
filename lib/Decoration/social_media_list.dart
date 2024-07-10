@@ -1,40 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:url_launcher/url_launcher.dart'; // Import url_launcher package
 import '../Constants/colors.dart';
 
 class SocialMediaIconList extends StatelessWidget {
   const SocialMediaIconList({super.key});
-
-  // URLs for each social media platform
-  final String emailUrl = 'mailto:s2.abhijeet@example.com';
-  final String githubUrl = 'https://github.com/AbhijeetS29';
-  final String linkedinUrl = 'https://www.linkedin.com/in/abhijeet-singh-931817245/';
-  final String instagramUrl = 'https://www.instagram.com/abhijeet.singh09/';
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
 
     final List<Widget> socialMediaIcons = [
-      GestureDetector(
-        onTap: () {
-          launch(instagramUrl); // Launch Instagram URL
-        },
-        child: Image.asset('assets/images/instagram.png', color: Colors.white, width: 30, height: 30,),
-      ),
-      GestureDetector(
-        onTap: () {
-          launch(linkedinUrl); // Launch LinkedIn URL
-        },
-        child: SvgPicture.asset('assets/icons/linkedin.svg', color: Colors.white, width: 25, height: 25),
-      ),
-      GestureDetector(
-        onTap: () {
-          launch(githubUrl); // Launch GitHub URL
-        },
-        child: SvgPicture.asset('assets/icons/github.svg', color: Colors.white, width: 25, height: 25),
-      ),
+      SvgPicture.asset('assets/icons/twitter.svg', color: Colors.white),
+      SvgPicture.asset('assets/icons/linkedin.svg', color: Colors.white),
+      SvgPicture.asset('assets/icons/github.svg', color: Colors.white),
+
     ];
 
     return TweenAnimationBuilder(
@@ -96,3 +75,4 @@ class SocialMediaIconList extends StatelessWidget {
     );
   }
 }
+
