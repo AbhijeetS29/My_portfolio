@@ -43,36 +43,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width;
-
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
         key: scaffoldKey,
         backgroundColor: bgColor,
-        body: SingleChildScrollView(
-          controller: scrollController,
-          scrollDirection: Axis.vertical,
-          child: Padding(
+        body: Padding(
             padding: const EdgeInsets.all(15.0),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                gradient: const LinearGradient(colors: [
-                  Colors.pinkAccent,
-                  Colors.blue,
-                ]),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.pink,
-                    offset: Offset(-2, 0),
-                    blurRadius: 20,
-                  ),
-                  BoxShadow(
-                    color: Colors.blue,
-                    offset: Offset(2, 0),
-                    blurRadius: 20,
-                  ),
-                ],
-              ),
               child: Container(
                 decoration: BoxDecoration(
                     color: bgColor, borderRadius: BorderRadius.circular(15)),
@@ -158,15 +134,11 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       key: navbarKeys[2],
                       width: screenWidth,
-
-                      padding:  const EdgeInsets.fromLTRB(25, 20, 25, 60),
-
-
+                      padding:  const EdgeInsets.fromLTRB(20, 20, 20, 20),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           // title
-
                           const PorjectHeading(start: 0, end: 40,),
 
                           const SizedBox(height: 50),
@@ -192,9 +164,9 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-            ),
+
           ),
-        ),
+
       );
     });
   }

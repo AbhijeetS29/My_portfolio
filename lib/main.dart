@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Portfolio',
       theme: ThemeData.dark(),
-      home: const HomePage(),
+      home: const SplashView(),
     );
   }
 }

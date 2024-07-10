@@ -31,6 +31,6 @@ const List<Map> skillItems1 = [
   },
   {
     "img": "assets/images/Figma.png",
-    "title": "figma",
+    "title": "Figma",
   },
 ];

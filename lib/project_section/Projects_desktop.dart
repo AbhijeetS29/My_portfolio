@@ -96,7 +96,7 @@ class _AboutMeCardState extends State<AboutMeCard> {
       },
       child: AnimatedContainer(
         duration: Duration(milliseconds: 300),
-        height: 250,
+        height: 280,
         width: 300,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
@@ -131,25 +131,31 @@ class _AboutMeCardState extends State<AboutMeCard> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(height: 15),
-                Text(
-                  workProjectUtils[widget.index].title,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'Open Sans',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    workProjectUtils[widget.index].title,
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontFamily: 'Open Sans',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 10),
-                Text(
-                  workProjectUtils[widget.index].subtitle,
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontFamily: 'Open Sans',
-                    color: Colors.white,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    workProjectUtils[widget.index].subtitle,
+                    style: TextStyle(
+                      fontSize: 13,
+                      fontFamily: 'Open Sans',
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 10),
                 Row(
@@ -178,7 +184,7 @@ class _AboutMeCardState extends State<AboutMeCard> {
                             workProjectUtils[widget.index].view,
                             style: const TextStyle(
                                 fontFamily: 'Open Sans',
-                                fontSize: 17,
+                                fontSize: 15,
                                 fontWeight: FontWeight.w500,
                                 color: CupertinoColors.activeOrange),
                           )),
