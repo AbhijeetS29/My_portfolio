@@ -56,7 +56,7 @@ class AboutHeading extends StatelessWidget {
                     return ShaderMask(
                       shaderCallback: (bounds) {
                         return const LinearGradient(
-                          colors: <Color>[Colors.pinkAccent, Colors.blueAccent],
+                          colors: <Color>[bgColor1,bgColor2],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ).createShader(bounds);

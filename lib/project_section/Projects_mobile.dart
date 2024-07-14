@@ -81,28 +81,28 @@ class _AboutMeCardState extends State<AboutMeCard> {
           duration: const Duration(milliseconds: 500),
 
           width: double.infinity,
-          transform: Matrix4.identity()
-            ..translate(
-              // Offset based on selection
-              widget.isSelected ? -20.0 : 0.0,
-              widget.isSelected ? 10.0 : 0.0,
-            )
-            ..rotateZ(widget.isSelected ? -0.05 : 0.0),
+          // transform: Matrix4.identity()
+          //   ..translate(
+          //     // Offset based on selection
+          //     widget.isSelected ? -20.0 : 0.0,
+          //     widget.isSelected ? 10.0 : 0.0,
+          //   )
+          //   ..rotateZ(widget.isSelected ? -0.05 : 0.0),
           // Rotate if selected
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             gradient: const LinearGradient(
-              colors: [Colors.pinkAccent, Colors.blue],
+              colors: [bgColor1,bgColor1],
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.pink.withOpacity(0.3),
+                color: bgColor1.withOpacity(0.3),
                 offset: const Offset(0, 5),
                 blurRadius: 15,
                 spreadRadius: isHovered ? 10 : 2,
               ),
               BoxShadow(
-                color: Colors.blue.withOpacity(0.3),
+                color: bgColor1.withOpacity(0.3),
                 offset: const Offset(0, 5),
                 blurRadius: 15,
                 spreadRadius: isHovered ? 10 : 2,
@@ -119,7 +119,7 @@ class _AboutMeCardState extends State<AboutMeCard> {
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 15),
                   Padding(

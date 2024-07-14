@@ -33,13 +33,10 @@ class HeaderMobile extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(defaultPadding),
-                  gradient: LinearGradient(colors: [
-                    Colors.pink,
-                    Colors.blue.shade900,
-                  ]),
+                  color: bgColor1,
                   boxShadow:const [
-                    BoxShadow(color: Colors.blue,offset: Offset(0, -1),blurRadius: defaultPadding/4),
-                    BoxShadow(color: Colors.red,offset: Offset(0, 1),blurRadius: defaultPadding/4),
+                    BoxShadow(color: bgColor1,offset: Offset(0, -1),blurRadius: defaultPadding/4),
+                    BoxShadow(color: bgColor1,offset: Offset(0, 1),blurRadius: defaultPadding/4),
                   ]
               ),
               child: const Row(
@@ -47,14 +44,14 @@ class HeaderMobile extends StatelessWidget {
                   Text(
                     "Download CV",
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 13,
                       fontFamily: 'Open Sans',
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: bgColor,
                     ),
                   ),
                   Text("  "),
-                  Icon(Icons.download)
+                  Icon(Icons.download,color: bgColor,)
                 ],
               ),
             ),

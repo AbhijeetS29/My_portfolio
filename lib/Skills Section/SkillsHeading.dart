@@ -1,5 +1,7 @@
 import'package:flutter/material.dart';
 
+import '../Constants/colors.dart';
+
 class SkillsHeading extends StatefulWidget {
   const SkillsHeading({super.key, required this.start, required this.end});
   final double start;
@@ -36,7 +38,7 @@ class _SkillsHeadingState extends State<SkillsHeading> {
                     return ShaderMask(
                       shaderCallback: (bounds) {
                         return const LinearGradient(
-                          colors: <Color>[Colors.pinkAccent, Colors.blueAccent],
+                          colors: <Color>[bgColor1,bgColor1],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ).createShader(bounds);

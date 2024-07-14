@@ -4,6 +4,6 @@ List<String> navTitles = [
   "Home",
   "About Me",
   "Projects",
-
+  "Contact"
 ];
 

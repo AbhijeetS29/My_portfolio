@@ -73,30 +73,30 @@ class _AboutMeCardState extends State<AboutMeCard> {
         onTap: widget.onCardTap,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 300),
-          height: 200,
+          height: 240,
           width: double.infinity,
-          transform: widget.isSelected
-              ? (Matrix4.identity()
-            ..rotateZ(-0.05)
-            ..translate(-20.0, 10.0))
-              : Matrix4.identity(),
+          // transform: widget.isSelected
+          //     ? (Matrix4.identity()
+          //   ..rotateZ(-0.05)
+          //   ..translate(-20.0, 10.0))
+          //     : Matrix4.identity(),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             gradient: const LinearGradient(
-              colors: [Colors.pinkAccent, Colors.blue],
+              colors: [bgColor1,bgColor1],
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.pink.withOpacity(0.3),
+                color: bgColor1.withOpacity(0.3),
                 offset: const Offset(0, 5),
-                blurRadius: 15,
-                spreadRadius: isHovered ? 10 : 2,
+                blurRadius: 10,
+                spreadRadius: isHovered ? 6 : 2,
               ),
               BoxShadow(
-                color: Colors.blue.withOpacity(0.3),
+                color: bgColor1.withOpacity(0.3),
                 offset: const Offset(0, 5),
-                blurRadius: 15,
-                spreadRadius: isHovered ? 10 : 2,
+                blurRadius: 10,
+                spreadRadius: isHovered ? 6 : 2,
               ),
             ],
           ),
@@ -108,52 +108,44 @@ class _AboutMeCardState extends State<AboutMeCard> {
                 color: bgColor,
                 borderRadius: BorderRadius.circular(30),
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Transform.translate(
-                    offset: widget.isSelected ? const Offset(-5, 5) : Offset.zero,
-                    child: Icon(
-                      aboutProjectUtils[widget.index].image,
-                      size: 40,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  Transform.translate(
-                    offset: widget.isSelected ? const Offset(-5, 5) : Offset.zero,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        aboutProjectUtils[widget.index].title,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                     Icon(
+                        aboutProjectUtils[widget.index].image,
+                        size: 40,
+                        color: Colors.white,
+                      ),
+                    const SizedBox(height: 15),
+                    Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          aboutProjectUtils[widget.index].title,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
-                        textAlign: TextAlign.center,
                       ),
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Transform.translate(
-                    offset: widget.isSelected ? const Offset(-5, 5) : Offset.zero,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        aboutProjectUtils[widget.index].subtitle,
-
-                        style: const TextStyle(
-                          fontFamily: 'Open Sans',
-
-                          fontSize: 14,
-                          color: Colors.white,
+                    const SizedBox(height: 10),
+                    Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          aboutProjectUtils[widget.index].subtitle,
+                          style: const TextStyle(
+                            fontFamily: 'Open Sans',
+                            fontSize: 14,
+                            color: Colors.white,
+                        ),
+                        ),
                       ),
-                                        ),
-                    ),
-      )
-                ],
+                  ],
+                ),
               ),
             ),
           ),

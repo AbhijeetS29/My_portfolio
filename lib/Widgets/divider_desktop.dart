@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../Constants/colors.dart';
+
 class DividerDesktop extends StatefulWidget {
   const DividerDesktop({super.key});
 
@@ -17,21 +19,14 @@ class _DividerDesktopState extends State<DividerDesktop> {
         height: 3,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          gradient: const LinearGradient(colors: [
-            Colors.pinkAccent,
-            Colors.blue,
-          ]),
+          color: bgColor1,
           boxShadow: const [
             BoxShadow(
-              color: Colors.pink,
+              color: bgColor1,
               offset: Offset(-2, 0),
               blurRadius: 20,
             ),
-            BoxShadow(
-              color: Colors.blue,
-              offset: Offset(2, 0),
-              blurRadius: 20,
-            ),
+
           ],
         ),
       ),

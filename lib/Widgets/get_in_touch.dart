@@ -35,23 +35,18 @@ class _GetTouchState extends State<GetTouch> {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         width: double.infinity,
-        constraints: const BoxConstraints(
-          minHeight: 350.0,
-        ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          gradient: const LinearGradient(
-            colors: [Colors.pinkAccent, Colors.blue],
-          ),
+          color: bgColor1,
           boxShadow: [
             BoxShadow(
-              color: Colors.pink.withOpacity(0.3),
+              color:bgColor1.withOpacity(0.3),
               offset: Offset(0, 5),
               blurRadius: 15,
               spreadRadius: 2, // Change spread radius on hover
             ),
             BoxShadow(
-              color: Colors.blue.withOpacity(0.3),
+              color: bgColor1.withOpacity(0.3),
               offset: Offset(0, 5),
               blurRadius: 15,
               spreadRadius: 2, // Change spread radius on hover

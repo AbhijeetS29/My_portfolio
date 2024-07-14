@@ -39,29 +39,24 @@ class AnimatedImageContainerPState extends State<AnimatedImageContainerP>
             width: widget.width!,
             padding: const EdgeInsets.all(defaultPadding / 4),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              gradient: const LinearGradient(colors: [
-                Colors.pinkAccent,
-                Colors.blue,
-              ]),
+              shape: BoxShape.circle,
+
+                color: bgColor1,
+
               boxShadow: const [
                 BoxShadow(
-                  color: Colors.pink,
+                  color: bgColor1,
                   offset: Offset(-2, 0),
                   blurRadius: 20,
                 ),
-                BoxShadow(
-                  color: Colors.blue,
-                  offset: Offset(2, 0),
-                  blurRadius: 20,
-                ),
+
               ],
             ),
             child: Container(
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(30),
+                shape: BoxShape.circle,
+                color: bgColor,
               ),
               child: Image.asset(
                 'assets/images/main.png',

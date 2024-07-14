@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/Constants/colors.dart';
 
 class SubTitles extends StatelessWidget {
   const SubTitles({super.key, required this.start, required this.end});
@@ -79,7 +80,7 @@ class SubTitles extends StatelessWidget {
                     return ShaderMask(
                       shaderCallback: (bounds) {
                         return const LinearGradient(
-                          colors: <Color>[Colors.pinkAccent, Colors.blueAccent],
+                          colors: <Color>[bgColor1,bgColor2],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
                         ).createShader(bounds);

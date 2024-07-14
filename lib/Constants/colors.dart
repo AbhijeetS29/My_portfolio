@@ -23,4 +23,6 @@ const secondaryColor = Color(0xFF242430);
 const darkColor = Color(0xFF191923);
 const bodyTextColor = Color(0xFF8B8B8D);
 const bgColor = Color(0xFF00091C);
+const bgColor1 = Color(0xFF40E0D0);
+const bgColor2 = Color(0xFFB8FFF1);
 const defaultPadding = 20.0;

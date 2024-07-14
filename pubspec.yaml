@@ -91,6 +91,8 @@ flutter:
       fonts:
         - asset: assets/fonts/open-sans.semibold.ttf
           weight: 800
+        - asset: assets/fonts/open-sans.regular.ttf
+          weight: 800
 #         - asset: fonts/Schyler-Italic.ttf
 #           style: italic
 #     - family: Trajan Pro
