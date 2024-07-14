@@ -9,7 +9,7 @@ const List<Map> skillItems = [
   },
   {
     "img": "assets/images/android.png",
-    "title": "Android Kotlin",
+    "title": "Android\nKotlin",
   },
   {
     "img": "assets/images/python.png",

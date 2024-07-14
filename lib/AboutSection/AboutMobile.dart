@@ -58,7 +58,7 @@ class _AboutMeCardState extends State<AboutMeCard> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
         height: isSelected ? 220 : 200, // Adjusted height for selected state
-        width: 300,
+        width: 350,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           gradient: const LinearGradient(
@@ -87,35 +87,38 @@ class _AboutMeCardState extends State<AboutMeCard> {
               color: bgColor,
               borderRadius: BorderRadius.circular(30),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(
-                  aboutProjectUtils[widget.index].image,
-                  size: 40,
-                  color: Colors.white,
-                ),
-                const SizedBox(height: 15),
-                Text(
-                  aboutProjectUtils[widget.index].title,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    aboutProjectUtils[widget.index].image,
+                    size: 40,
                     color: Colors.white,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  aboutProjectUtils[widget.index].subtitle,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: Colors.white,
+                  const SizedBox(height: 5),
+                  Text(
+                    aboutProjectUtils[widget.index].title,
+                    style: const TextStyle(
+                      fontFamily: 'Open Sans',
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
+                  Text(
+                    aboutProjectUtils[widget.index].subtitle,
+                    style:  const TextStyle(
+                      fontSize: 12,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
