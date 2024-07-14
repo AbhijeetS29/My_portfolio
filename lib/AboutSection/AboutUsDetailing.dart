@@ -2,31 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/Constants/services_utils.dart';
 import '../Constants/colors.dart';
 
-class AboutMe extends StatelessWidget {
-  const AboutMe({Key? key}) : super(key: key);
+class AboutusMobile extends StatefulWidget {
+  const AboutusMobile({Key? key}) : super(key: key);
+
+  @override
+  State<AboutusMobile> createState() => _AboutusMobileState();
+}
+
+class _AboutusMobileState extends State<AboutusMobile> {
+  int? selectedIndex;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          for (int i = 0; i < aboutProjectUtils.length; i += 2)
+          for (int i = 0; i < aboutProjectUtils.length; i++)
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: AboutMeCard(index: i),
-                  ),
-                  const SizedBox(width: 20),
-                  if (i + 1 < aboutProjectUtils.length)
-                    Expanded(
-                      child: AboutMeCard(index: i + 1),
-                    ),
-                ],
+              child: AboutMeCard(
+                index: i,
+                isSelected: selectedIndex == i,
+                onCardTap: () {
+                  setState(() {
+                    // Toggle selection state
+                    if (selectedIndex == i) {
+                      selectedIndex = null; // Deselect if tapped again
+                    } else {
+                      selectedIndex = i;
+                    }
+                  });
+                },
               ),
             ),
         ],
@@ -35,52 +43,42 @@ class AboutMe extends StatelessWidget {
   }
 }
 
-class AboutMeCard extends StatefulWidget {
+class AboutMeCard extends StatelessWidget {
   final int index;
+  final bool isSelected;
+  final VoidCallback onCardTap;
 
-  const AboutMeCard({required this.index});
-
-  @override
-  _AboutMeCardState createState() => _AboutMeCardState();
-}
-
-class _AboutMeCardState extends State<AboutMeCard> {
-  bool isHovered = false;
+  const AboutMeCard({
+    required this.index,
+    required this.isSelected,
+    required this.onCardTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (event) {
-        setState(() {
-          isHovered = true;
-        });
-      },
-      onExit: (event) {
-        setState(() {
-          isHovered = false;
-        });
-      },
+    return GestureDetector(
+      onTap: onCardTap,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        height: 200,
-        width: 300,
+        // height: isSelected ? 260 : 240, // Adjusted height for selected state
+        width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           gradient: const LinearGradient(
-            colors: [bgColor1,bgColor1],
+            colors: [bgColor1, bgColor1],
           ),
           boxShadow: [
             BoxShadow(
               color: bgColor1.withOpacity(0.3),
               offset: const Offset(0, 5),
               blurRadius: 10,
-              spreadRadius: isHovered ? 6 : 1, // Change spread radius on hover
+              spreadRadius: isSelected ? 6 : 2,
             ),
             BoxShadow(
               color: bgColor1.withOpacity(0.3),
               offset: const Offset(0, 5),
               blurRadius: 10,
-              spreadRadius: isHovered ? 6 : 1, // Change spread radius on hover
+              spreadRadius: isSelected ? 6 : 2,
             ),
           ],
         ),
@@ -92,35 +90,45 @@ class _AboutMeCardState extends State<AboutMeCard> {
               color: bgColor,
               borderRadius: BorderRadius.circular(30),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(
-                  aboutProjectUtils[widget.index].image,
-                  size: 40,
-                  color: Colors.white,
-                ),
-                const SizedBox(height: 15),
-                Text(
-                  aboutProjectUtils[widget.index].title,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    aboutProjectUtils[index].image,
+                    size: 40,
                     color: Colors.white,
                   ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  aboutProjectUtils[widget.index].subtitle,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: Colors.white,
+                  const SizedBox(height: 15),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      aboutProjectUtils[index].title,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
+                  const SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      aboutProjectUtils[index].subtitle,
+                      style: const TextStyle(
+                        fontFamily: 'Open Sans',
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:math' as math;
 
 import '../Constants/colors.dart';
 import '../Constants/project_utils.dart';
-
 
 class ProjectMobile extends StatefulWidget {
   const ProjectMobile({Key? key}) : super(key: key);
@@ -27,7 +25,7 @@ class _ProjectMobileState extends State<ProjectMobile> {
           for (int i = 0; i < workProjectUtils.length; i++)
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10),
-              child: AboutMeCard(
+              child: ProjectCard(
                 index: i,
                 isSelected: selectedIndex == i,
                 onCardTap: () {
@@ -44,22 +42,22 @@ class _ProjectMobileState extends State<ProjectMobile> {
   }
 }
 
-class AboutMeCard extends StatefulWidget {
+class ProjectCard extends StatefulWidget {
   final int index;
   final bool isSelected;
   final VoidCallback onCardTap;
 
-  const AboutMeCard({
+  const ProjectCard({
     required this.index,
     required this.isSelected,
     required this.onCardTap,
   });
 
   @override
-  _AboutMeCardState createState() => _AboutMeCardState();
+  _ProjectCardState createState() => _ProjectCardState();
 }
 
-class _AboutMeCardState extends State<AboutMeCard> {
+class _ProjectCardState extends State<ProjectCard> {
   bool isHovered = false;
 
   @override
@@ -79,61 +77,50 @@ class _AboutMeCardState extends State<AboutMeCard> {
         onTap: widget.onCardTap,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 500),
-
+          curve: Curves.easeInOut,
+          height: 310, // Adjusted height for selected state
           width: double.infinity,
-          // transform: Matrix4.identity()
-          //   ..translate(
-          //     // Offset based on selection
-          //     widget.isSelected ? -20.0 : 0.0,
-          //     widget.isSelected ? 10.0 : 0.0,
-          //   )
-          //   ..rotateZ(widget.isSelected ? -0.05 : 0.0),
-          // Rotate if selected
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             gradient: const LinearGradient(
-              colors: [bgColor1,bgColor1],
+              colors: [bgColor1, bgColor1],
             ),
             boxShadow: [
               BoxShadow(
                 color: bgColor1.withOpacity(0.3),
                 offset: const Offset(0, 5),
                 blurRadius: 15,
-                spreadRadius: isHovered ? 10 : 2,
+                spreadRadius: isHovered || widget.isSelected ? 10 : 2,
               ),
               BoxShadow(
                 color: bgColor1.withOpacity(0.3),
                 offset: const Offset(0, 5),
                 blurRadius: 15,
-                spreadRadius: isHovered ? 10 : 2,
+                spreadRadius: isHovered || widget.isSelected ? 10 : 2,
               ),
             ],
           ),
           child: Padding(
             padding: const EdgeInsets.all(2.0),
             child: Container(
-              alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: bgColor,
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(30)
               ),
+              
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const SizedBox(height: 15),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      workProjectUtils[widget.index].title,
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontFamily: 'Open Sans',
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                      textAlign: TextAlign.center,
+                  Text(
+                    workProjectUtils[widget.index].title,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontFamily: 'Open Sans',
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
+                    textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 10),
                   Text(
@@ -160,25 +147,27 @@ class _AboutMeCardState extends State<AboutMeCard> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextButton(
-                            onPressed: () async {
-                              var url = workProjectUtils[widget.index].webLink.toString();
-                              if (await canLaunch(url)) {
-                                await launch(url);
-                              } else {
-                                throw 'Could not launch $url';
-                              }
-                            },
-                            child: Text(
-                              workProjectUtils[widget.index].view,
-                              style: const TextStyle(
-                                  fontFamily: 'Open Sans',
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w500,
-                                  color: CupertinoColors.activeOrange),
-                            )),
-                      )
+                          onPressed: () async {
+                            var url = workProjectUtils[widget.index].webLink.toString();
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              throw 'Could not launch $url';
+                            }
+                          },
+                          child: Text(
+                            workProjectUtils[widget.index].view,
+                            style: const TextStyle(
+                              fontFamily: 'Open Sans',
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.orange,
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
