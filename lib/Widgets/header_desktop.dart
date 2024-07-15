@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../Constants/colors.dart';
 import '../Constants/nav_items.dart';
 import '../Decoration/site_logo.dart';
@@ -60,7 +61,18 @@ class HeaderDesktop extends StatelessWidget {
               ),
             const Spacer(), // Adds space between the navigation items and the last container
             GestureDetector(
-              onTap: () {
+              onTap: () async {
+                final Uri params = Uri(
+                  scheme: 'mailto',
+                  path: 's2.abhijeet@gmail.com',
+                  query: 'subject=CV Request&body=Hi, I would like to request your CV.',
+                );
+                var url = params.toString();
+                if (await canLaunch(url)) {
+                  await launch(url);
+                } else {
+                  throw 'Could not launch $url';
+                }
 
               },
               child: Container(

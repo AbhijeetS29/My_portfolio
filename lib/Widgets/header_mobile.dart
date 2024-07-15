@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/Constants/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../Decoration/site_logo.dart';
 
@@ -26,8 +27,18 @@ class HeaderMobile extends StatelessWidget {
           ),
           const Spacer(),
           GestureDetector(
-            onTap: (){
-
+            onTap: () async {
+              final Uri params = Uri(
+                scheme: 'mailto',
+                path: 's2.abhijeet@gmail.com',
+                query: 'subject=CV Request&body=Hi, I would like to request your CV.',
+              );
+              var url = params.toString();
+              if (await canLaunch(url)) {
+              await launch(url);
+              } else {
+              throw 'Could not launch $url';
+              }
             },
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
