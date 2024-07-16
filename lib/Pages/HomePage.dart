@@ -3,6 +3,7 @@ import 'package:my_portfolio/AboutSection/AboutUsHeading.dart';
 import 'package:my_portfolio/Constants/colors.dart';
 import 'package:my_portfolio/Constants/nav_items.dart';
 import 'package:my_portfolio/Constants/size.dart';
+import 'package:my_portfolio/GetInTouch/GetinTouchHeading.dart';
 import 'package:my_portfolio/Skills%20Section/SkillsDesktop.dart';
 import 'package:my_portfolio/Skills%20Section/SkillsHeading.dart';
 import 'package:my_portfolio/Skills%20Section/SkillsMobile.dart';
@@ -12,7 +13,7 @@ import 'package:my_portfolio/project_section/Projects_mobile.dart';
 
 import 'package:my_portfolio/AboutSection/AboutHeading.dart';
 import 'package:my_portfolio/Widgets/divider_desktop.dart';
-import 'package:my_portfolio/Widgets/get_in_touch.dart';
+import 'package:my_portfolio/GetInTouch/get_in_touch.dart';
 import 'package:my_portfolio/Widgets/header_desktop.dart';
 import 'package:my_portfolio/Widgets/header_mobile.dart';
 import 'dart:js' as js;
@@ -146,8 +147,14 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  GetTouch(
+                  Container(
                     key: navbarKeys[3],
+                    width: screenWidth!,
+                    child: Column(
+                      children: [
+                        GetTouch(),
+                      ],
+                    ),
                   ),
                 ],
               ),
