@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/Constants/services_utils.dart';
 import '../Constants/colors.dart';
 
-class AboutusMobile extends StatefulWidget {
-  const AboutusMobile({Key? key}) : super(key: key);
+class AboutUsMobile extends StatefulWidget {
+  const AboutUsMobile({Key? key}) : super(key: key);
 
   @override
-  State<AboutusMobile> createState() => _AboutusMobileState();
+  State<AboutUsMobile> createState() => _AboutUsMobileState();
 }
 
-class _AboutusMobileState extends State<AboutusMobile> {
+class _AboutUsMobileState extends State<AboutUsMobile> {
   int? selectedIndex;
 
   @override

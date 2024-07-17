@@ -49,15 +49,20 @@ class _AboutMeCardState extends State<AboutMeCard> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
+    return MouseRegion(
+      onEnter: (event) {
         setState(() {
-          isSelected = !isSelected; // Toggle selection
+          isSelected = true; // Toggle selection
+        });
+      },
+      onExit: (event) {
+        setState(() {
+          isSelected = false; // Toggle selection
         });
       },
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
-        height: isSelected ? 220 : 200, // Adjusted height for selected state
+        duration: const Duration(milliseconds: 500),
+        height: isSelected ? 220 : 210, // Adjusted height for selected state
         width: 350,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
@@ -69,13 +74,13 @@ class _AboutMeCardState extends State<AboutMeCard> {
               color: bgColor1.withOpacity(0.3),
               offset: const Offset(0, 5),
               blurRadius: 10,
-              spreadRadius: isSelected ? 6 : 1, // Change spread radius on selection
+              spreadRadius: isSelected ? 10 : 2, // Change spread radius on selection
             ),
             BoxShadow(
               color: bgColor1.withOpacity(0.3),
               offset: const Offset(0, 5),
               blurRadius: 10,
-              spreadRadius: isSelected ? 6 : 1, // Change spread radius on selection
+              spreadRadius: isSelected ? 10 : 2, // Change spread radius on selection
             ),
           ],
         ),

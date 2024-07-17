@@ -17,8 +17,8 @@ import 'package:my_portfolio/GetInTouch/get_in_touch.dart';
 import 'package:my_portfolio/Widgets/header_desktop.dart';
 import 'package:my_portfolio/Widgets/header_mobile.dart';
 import 'dart:js' as js;
-import '../AboutSection/AboutMobile.dart';
-import '../AboutSection/AboutUsDetailing.dart';
+import '../AboutSection/AboutUsDesktop.dart';
+import '../AboutSection/AboutusMobile.dart';
 
 import '../Widgets/main_desktop.dart';
 import '../Widgets/main_mobile.dart';
@@ -112,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                               AboutHeading(start: 0, end: 40),
                               SizedBox(height: 20),
                               // Adjust spacing between sections
-                              AboutusMobile(),
+                              AboutUsMobile(),
                               SkillsHeading(start: 0, end: 30),
                               SkillsMobile()
                               // Adjust start and end parameters as needed
