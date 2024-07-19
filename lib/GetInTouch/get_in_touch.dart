@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/GetInTouch/GetinTouchHeading.dart';
+import 'package:my_portfolio/IntroTexts/SubTexts.dart';
 import 'package:my_portfolio/IntroTexts/headline_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../Constants/colors.dart';
@@ -42,25 +43,6 @@ class _GetTouchState extends State<GetTouch> {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          color: bgColor1,
-          boxShadow: [
-            BoxShadow(
-              color:bgColor1.withOpacity(0.3),
-              offset: const Offset(0, 5),
-              blurRadius: 15,
-              spreadRadius: 2, // Change spread radius on hover
-            ),
-            BoxShadow(
-              color: bgColor1.withOpacity(0.3),
-              offset: const Offset(0, 5),
-              blurRadius: 15,
-              spreadRadius: 2, // Change spread radius on hover
-            ),
-          ],
-        ),
-
         child: Padding(
           padding: const EdgeInsets.all(1.5),
           child: Container(
@@ -72,21 +54,24 @@ class _GetTouchState extends State<GetTouch> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
                 const Padding(
                   padding: EdgeInsets.only(top: 15,left: 20),
                   child: ContactsHeading(start: 0, end: 25),
-                ),const Padding(
-                  padding: EdgeInsets.only(top: 15,left: 20),
-                  child: MyPortfolioText(start: 0, end: 25),
-                )
-                ,
-                const Padding(
-                  padding: EdgeInsets.only(top: 15,left: 20,bottom: 20),
-                  child: Text("I am an experienced application and web developer with expertise in Flutter and Kotlin. I excel in creating user-friendly designs and have a proven track record of delivering high-quality applications. In addition to my technical skills, I volunteer with the MADHAV SEWA SOCIETY, an NGO dedicated to serving humanity by providing essential services and support. I also have expertise in content writing, which complements my development skills and enhances my ability to create engaging and informative content.",
-                  style: TextStyle(
-                    fontFamily: 'Open Sans',fontWeight: FontWeight.w500
-                  ),),
                 ),
+
+                        const Padding(
+                          padding: EdgeInsets.only(top: 15,left: 20),
+                          child: Center(child: SubTitles(start: 0, end: 25)),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Center(child: Text("I am an experienced application and web developer with expertise in Flutter and Kotlin.I also excel in creating user-friendly designs",
+                            style: TextStyle(fontFamily: 'Open Sans'),)
+                          ),
+                        ),
+
+
 
                 Padding(
                   padding: const EdgeInsets.only(left: 20,right: 20),
@@ -98,112 +83,132 @@ class _GetTouchState extends State<GetTouch> {
                     ),
                   ),
                 ),
+
+
                 Padding(
                   padding: const EdgeInsets.only(top: 5, bottom: 5),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+
                     children: [
-                      GestureDetector(
-                        onTap: () => _launchURL(emailUrl),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(60)),
-                          child: const Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Icon(FontAwesomeIcons.mailBulk,color: Colors.white,size: 25,
-                                ),
-                              ),Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text("Gmail",
-                                    style: TextStyle(fontSize: 10)
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => _launchURL(githubUrl),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(60)),
-                          child: const Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Icon(FontAwesomeIcons.github,color: Colors.white,size: 25,
-                                ),
-                              ),Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text("Github",style: TextStyle(fontSize: 10))
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => _launchURL(linkedinUrl),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(60)),
-                          child: const Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Icon(FontAwesomeIcons.linkedin,color: Colors.white,size: 25,
-                                ),
-                              ),Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text("LinkedIn",
-                                    style: TextStyle(fontSize: 10)
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => _launchURL(instagramUrl),
-                        child: Container(
-                          decoration: BoxDecoration(
 
-                              borderRadius: BorderRadius.circular(60)),
-                          child: const Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Icon(FontAwesomeIcons.instagram,color: Colors.white,size: 25,
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GestureDetector(
+                          onTap: () => _launchURL(emailUrl),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(60)),
+                            child: const Column(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Icon(FontAwesomeIcons.mailBulk,color: Colors.white,size: 25,
+                                  ),
+                                ),Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text("Gmail",
+                                      style: TextStyle(fontSize: 10)
+                                  ),
                                 ),
-                              ),Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text("Instagram",
-                                    style: TextStyle(fontSize: 10)
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
-                      ),GestureDetector(
-                        onTap: () => _launchWhatsApp('6284056754', 'Hello, I\'m interested in your services'),
-                        child: Container(
-                          decoration: BoxDecoration(
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GestureDetector(
+                          onTap: () => _launchURL(githubUrl),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(60)),
+                            child: const Column(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Icon(FontAwesomeIcons.github,color: Colors.white,size: 25,
+                                  ),
+                                ),Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text("Github",style: TextStyle(fontSize: 10))
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GestureDetector(
+                          onTap: () => _launchURL(linkedinUrl),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(60)),
+                            child: const Column(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Icon(FontAwesomeIcons.linkedin,color: Colors.white,size: 25,
+                                  ),
+                                ),Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text("LinkedIn",
+                                      style: TextStyle(fontSize: 10)
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GestureDetector(
+                          onTap: () => _launchURL(instagramUrl),
+                          child: Container(
+                            decoration: BoxDecoration(
 
-                              borderRadius: BorderRadius.circular(60)),
-                          child: const Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Icon(FontAwesomeIcons.whatsapp,color: Colors.white,size: 25,
+                                borderRadius: BorderRadius.circular(60)),
+                            child: const Column(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Icon(FontAwesomeIcons.instagram,color: Colors.white,size: 25,
+                                  ),
+                                ),Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text("Instagram",
+                                      style: TextStyle(fontSize: 10)
+                                  ),
                                 ),
-                              ),Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text("WhatsApp",
-                                  style: TextStyle(fontSize: 10),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GestureDetector(
+                          onTap: () => _launchWhatsApp('6284056754', 'Hello, I\'m interested in your services'),
+                          child: Container(
+                            decoration: BoxDecoration(
+
+                                borderRadius: BorderRadius.circular(60)),
+                            child: const Column(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Icon(FontAwesomeIcons.whatsapp,color: Colors.white,size: 25,
+                                  ),
+                                ),Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Text("WhatsApp",
+                                    style: TextStyle(fontSize: 10),
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ),

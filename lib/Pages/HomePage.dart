@@ -147,6 +147,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
+                  const DividerDesktop(),
                   Container(
                     key: navbarKeys[3],
                     width: screenWidth!,

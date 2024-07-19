@@ -24,30 +24,7 @@ class AboutHeading extends StatelessWidget {
               fontSize: value,
             ),
             children: [
-              WidgetSpan(
-                child: TweenAnimationBuilder<double>(
-                  tween: Tween<double>(begin: 0, end: value),
-                  duration: const Duration(milliseconds: 200),
-                  builder: (context, tweenValue, child) {
-                    return  Text(
-                      'About',
-                      style: TextStyle(
-                        fontSize: tweenValue,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    );
-                  },
-                ),
-              ),
-              TextSpan(
-                text: ' ',
-                style: TextStyle(
-                  fontSize: value,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
+
               WidgetSpan(
                 child: TweenAnimationBuilder<double>(
                   tween: Tween<double>(begin: 0, end: value),
@@ -62,7 +39,7 @@ class AboutHeading extends StatelessWidget {
                         ).createShader(bounds);
                       },
                       child: Text(
-                        'US',
+                        'ABOUT',
                         style: TextStyle(
                           fontSize: tweenValue,
                           color: Colors.white,
